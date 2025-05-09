@@ -520,6 +520,8 @@ h6 {
     color: var(--contrast-color);
   }
 
+  
+
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
