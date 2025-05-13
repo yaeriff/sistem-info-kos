@@ -12,53 +12,55 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Montserrat",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+:root {
+  --background-color: #f2f2f2; /* Background color for the entire website, including individual sections */
   --default-color: #222222; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #172a28; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #008374; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --accent-color: #b6b09f; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #f2f2f2; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #f2f2f2; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #008374; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #01433c; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #008374; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #f2f2f2; /* The default color of the main navmenu links */
+  --nav-hover-color: #b6b09f; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #f2f2f2; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #f2f2f2; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #eae4d5; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #b6b09f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
   --background-color: #f2f9f9;
-  --surface-color: #ffffff;
+  --surface-color: #f2f2f2;
 }
 
 .dark-background {
   --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
+  --default-color: #f2f2f2;
+  --heading-color: #f2f2f2;
   --surface-color: #252525;
-  --contrast-color: #ffffff;
+  --contrast-color: #f2f2f2;
 }
 
 .accent-background {
-  --background-color: #008374;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #ffffff;
-  --surface-color: #00b6a1;
-  --contrast-color: #ffffff;
+  --background-color: #b6b09f;
+  --default-color: #f2f2f2;
+  --heading-color: #f2f2f2;
+  --accent-color: #f2f2f2;
+  --surface-color: #eae4d5;
+  --contrast-color: #f2f2f2;
 }
 
 /* Smooth scroll */
@@ -101,7 +103,10 @@ h6 {
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
   border-radius: 50%;
   display: block;
   position: relative;
@@ -259,7 +264,6 @@ h6 {
 }
 
 @media (max-width: 575px) {
-
   .header .topbar .contact-info i a,
   .header .topbar .contact-info i span {
     font-size: 13px;
@@ -339,12 +343,12 @@ h6 {
     position: relative;
   }
 
-  .navmenu>ul>li {
+  .navmenu > ul > li {
     white-space: nowrap;
     padding: 15px 14px;
   }
 
-  .navmenu>ul>li:last-child {
+  .navmenu > ul > li:last-child {
     padding-right: 0;
   }
 
@@ -371,7 +375,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .navmenu>ul>li>a:before {
+  .navmenu > ul > li > a:before {
     content: "";
     position: absolute;
     height: 2px;
@@ -384,13 +388,13 @@ h6 {
   }
 
   .navmenu a:hover:before,
-  .navmenu li:hover>a:before,
+  .navmenu li:hover > a:before,
   .navmenu .active:before {
     visibility: visible;
     width: 100%;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-color);
@@ -429,11 +433,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -445,7 +449,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -520,8 +524,6 @@ h6 {
     color: var(--contrast-color);
   }
 
-  
-
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
@@ -549,7 +551,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -576,7 +578,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -687,7 +689,8 @@ h6 {
 .footer .copyright {
   padding-top: 30px;
   padding-bottom: 30px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -791,7 +794,8 @@ h6 {
 
 .page-title .heading {
   padding: 160px 0 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .page-title .heading h1 {
@@ -821,11 +825,11 @@ h6 {
   color: var(--default-color);
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -845,7 +849,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 100px;
@@ -918,7 +921,7 @@ section,
 
 .hero .btn-get-started {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: black;
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 14px;
@@ -928,11 +931,11 @@ section,
   border-radius: 50px;
   transition: 0.3s;
   border: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  background-color: color-mix(in srgb, black, transparent 10px);
 }
 
 .hero .btn-get-started:hover {
-  border-color: color-mix(in srgb, var(--default-color), transparent 60%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
 .hero .btn-watch-video {
@@ -980,7 +983,8 @@ section,
     right: 0;
     height: calc(50% + 20px);
     background-color: var(--default-color);
-    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-top: 1px solid
+      color-mix(in srgb, var(--default-color), transparent 90%);
   }
 }
 
@@ -988,7 +992,7 @@ section,
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: var(--background-color);
+  background: #eae4d5;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -1176,7 +1180,10 @@ section,
   width: 94px;
   height: 94px;
   margin-bottom: 20px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 60%) 52%);
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 60%) 52%
+  );
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -1315,7 +1322,8 @@ section,
   font-size: 22px;
   position: relative;
   display: inline-block;
-  border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
+  border-bottom: 4px solid
+    color-mix(in srgb, var(--heading-color), transparent 90%);
   transition: 0.3s;
 }
 
@@ -1506,7 +1514,8 @@ section,
 
 .portfolio .portfolio-content .portfolio-info {
   background-color: var(--background-color);
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   padding: 25px 20px;
   position: relative;
   z-index: 2;
@@ -1961,8 +1970,8 @@ section,
   padding: 30px;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
@@ -1973,19 +1982,19 @@ section,
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1994,7 +2003,7 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -2012,7 +2021,8 @@ section,
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  border-left: 3px solid
+    color-mix(in srgb, var(--default-color), transparent 70%);
   margin: 20px 0;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
@@ -2101,7 +2111,6 @@ section,
 }
 
 @media (max-width: 575px) {
-
   .portfolio-details .swiper-button-prev,
   .portfolio-details .swiper-button-next {
     display: none;
@@ -2422,7 +2431,7 @@ section,
   margin: 0;
 }
 
-.blog-details .meta-top ul li+li {
+.blog-details .meta-top ul li + li {
   padding-left: 20px;
 }
 
@@ -2442,7 +2451,8 @@ section,
 
 .blog-details .meta-bottom {
   padding-top: 10px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .blog-details .meta-bottom i {
@@ -2481,7 +2491,7 @@ section,
   display: inline-block;
 }
 
-.blog-details .meta-bottom .tags li+li::before {
+.blog-details .meta-bottom .tags li + li::before {
   padding-right: 6px;
   color: var(--default-color);
   content: ",";
@@ -2710,7 +2720,7 @@ section,
   transition: 0.3s;
 }
 
-.search-widget form input[type=text] {
+.search-widget form input[type="text"] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
@@ -2719,7 +2729,7 @@ section,
   color: var(--default-color);
 }
 
-.search-widget form input[type=text]:focus {
+.search-widget form input[type="text"]:focus {
   outline: none;
 }
 
