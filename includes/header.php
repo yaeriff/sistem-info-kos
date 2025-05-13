@@ -4,10 +4,10 @@
         >
           <div class="contact-info d-flex align-items-center">
             <i class="bi bi-envelope d-flex align-items-center"
-              ><a href="mailto:contact@example.com">contact@example.com</a></i
+              ><a href="mailto:contact@example.com">kosbunna@gmail.com</a></i
             >
             <i class="bi bi-phone d-flex align-items-center ms-4"
-              ><span>+62 5589 55488 55</span></i
+              ><span>+62 8951 4595 376</span></i
             >
           </div>
           <div class="social-links d-none d-md-flex align-items-center">

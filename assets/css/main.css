@@ -236,7 +236,6 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #008374;
   --heading-color: #ffffff;
   color: var(--default-color);
   transition: all 0.5s;
@@ -992,7 +991,7 @@ section,
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #eae4d5;
+  background: black;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -1000,6 +999,10 @@ section,
   height: 100%;
   width: 100%;
   text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .hero .icon-box .title {
