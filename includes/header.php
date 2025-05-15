@@ -4,7 +4,7 @@
         >
           <div class="contact-info d-flex align-items-center">
             <i class="bi bi-envelope d-flex align-items-center"
-              ><a href="mailto:contact@example.com">kosbunna@gmail.com</a></i
+              ><a href="kosbunna@gmail.com">kosbunna@gmail.com</a></i
             >
             <i class="bi bi-phone d-flex align-items-center ms-4"
               ><span>+62 8951 4595 376</span></i
@@ -21,7 +21,7 @@
       <!-- End Top Bar -->
       <div
         class="branding d-flex align-items-center"
-        style="background-color: black"
+        style="background-color: #948979"
       >
         <div
           class="container position-relative d-flex align-items-center justify-content-between"
