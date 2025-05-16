@@ -11,13 +11,13 @@
         ><span>+62 8951 4595 376</span></i
       >
     </div>
-    <button class="btn btn-success btn-sm px-4"  type="submit">Login</button>
+    <button class="btn btn-sm px-4"  type="submit">Login</button>
   </div>
 </div>
       <!-- End Top Bar -->
 <div
   class="branding d-flex align-items-center"
-  style="background-color: #948979"
+  id="branding"
 >
   <div
     class="container position-relative d-flex align-items-center justify-content-between"

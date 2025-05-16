@@ -299,6 +299,7 @@ h6 {
 .header .branding {
   min-height: 60px;
   padding: 10px 0;
+  background-color: #948979;
 }
 
 .header .logo {
@@ -327,6 +328,20 @@ h6 {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
 
+.topbar button {
+  background-color: #dfd0b8;
+  color: black;
+}
+
+.topbar button:hover {
+  background-color: #948979;
+  color: white;
+  transition: 0.3 ease-in-out;
+  -webkit-transition: 0.3 ease-in-out;
+  -moz-transition: 0.3 ease-in-out;
+  -ms-transition: 0.3 ease-in-out;
+  -o-transition: 0.3 ease-in-out;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -912,23 +927,24 @@ section,
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: white;
 }
 
 .hero h2 .accent {
-  color: var(--conrast-color);
+  color: #dfd0b8;
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+  color: color-mix(in srgb, white, transparent 40%);
   font-weight: 400;
   margin-bottom: 30px;
 }
 
 .hero .btn-get-started {
-  color: var(--contrast-color);
-  background: black;
+  color: var(--default-color);
+  background: #dfd0b8;
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
@@ -936,15 +952,22 @@ section,
   border-radius: 50px;
   transition: 0.3s;
   border: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  background-color: color-mix(in srgb, black, transparent 10px);
+  background-color: color-mix(in srgb, #393e46, transparent 10px);
 }
 
 .hero .btn-get-started:hover {
-  border-color: color-mix(in srgb, var(--default-color), transparent 40%);
+  border-color: color-mix(in srgb, #dfd0b8, transparent 40%);
+  color: var(--contrast-color);
+  background: #948979;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
 }
 
 .hero .btn-watch-video {
-  font-size: 16px;
+  font-size: 14px;
   transition: 0.5s;
   margin-left: 25px;
   font-weight: 600;
@@ -952,7 +975,7 @@ section,
 }
 
 .hero .btn-watch-video i {
-  color: color-mix(in srgb, var(--contrast-color, transparent 50%));
+  color: color-mix(in srgb, var(--contrast-color), transparent 50%);
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -993,17 +1016,21 @@ section,
 }
 
 .hero .icon-box {
-  padding: 60px 30px;
+  padding: 30px;
   position: relative;
   overflow: hidden;
-  background: var(--heading-color);
-  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.1);
+  background: #dfd0b8;
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
   height: 100%;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -1012,17 +1039,17 @@ section,
 
 .hero .icon-box .title {
   font-weight: 700;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   font-size: 24px;
 }
 
 .hero .icon-box .title a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, black, transparent 20%);
   transition: 0.3s;
 }
 
 .hero .icon-box .icon {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding-top: 10px;
   display: inline-block;
   transition: all 0.3s ease-in-out;
@@ -1032,7 +1059,7 @@ section,
 }
 
 .hero .icon-box:hover {
-  background-color: color-mix(in srgb, var(--background-color), white 10%);
+  background-color: color-mix(in srgb, var(--heading-color), white 10%);
 }
 
 .hero .icon-box:hover .title a,
@@ -2259,9 +2286,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 /*--------------------------------------------------------------
 # Blog Posts Section
