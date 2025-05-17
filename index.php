@@ -19,6 +19,12 @@
       rel="stylesheet"
     />
 
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link
@@ -61,85 +67,13 @@
         ?>
       <!-- /About Section -->
 
-      <!-- Clients Section -->
-      <section id="clients" class="clients section">
-        <div class="container">
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 40
-                  },
-                  "480": {
-                    "slidesPerView": 3,
-                    "spaceBetween": 60
-                  },
-                  "640": {
-                    "slidesPerView": 4,
-                    "spaceBetween": 80
-                  },
-                  "992": {
-                    "slidesPerView": 6,
-                    "spaceBetween": 120
-                  }
-                }
-              }
-            </script>
-          </div>
-        </div>
-      </section>
-      <!-- /Clients Section -->
-
-      <!-- Stats Section -->
-        <?php 
-          include 'includes/sections/stats.php';
-        ?>
-      <!-- /Stats Section -->
 
       <!-- Call To Action Section -->
-      <section
-        id="call-to-action"
-        class="call-to-action section dark-background"
-      >
-        <div class="container">
-          <img src="assets/img/cta-bg.jpg" alt="" />
-          <div
-            class="content row justify-content-center"
-            data-aos="zoom-in"
-            data-aos-delay="100"
-          >
-            <div class="col-xl-10">
-              <div class="text-center">
-                <a
-                  href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                  class="glightbox play-btn"
-                ></a>
-                <h3>Call To Action</h3>
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim id est laborum.
-                </p>
-                <a class="cta-btn" href="#">Call To Action</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Call To Action Section -->
+        <?php 
+          include 'includes/sections/video.php';
+        ?>
+
       <!-- /Call To Action Section -->
 
       <!-- Services Section -->
@@ -214,5 +148,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({ selector: '.glightbox' });
+    </script>
   </body>
 </html>
