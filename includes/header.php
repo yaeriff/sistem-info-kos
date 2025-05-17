@@ -1,7 +1,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 <link rel="stylesheet" href="assets/css/main.css">
 
-<div class="topbar d-flex align-items-center py-4">
+<div class="topbar d-flex align-items-center">
   <div class="container d-flex justify-content-center justify-content-md-between">
     <div class="contact-info d-flex align-items-center">
       <i class="bi bi-envelope d-flex align-items-center"
@@ -11,7 +11,7 @@
         ><span>+62 8951 4595 376</span></i
       >
     </div>
-    <button class="btn btn-sm px-4"  type="submit">Login</button>
+    <button class="btn btn-sm px-4" id="login" type="submit">Login</button>
   </div>
 </div>
       <!-- End Top Bar -->
