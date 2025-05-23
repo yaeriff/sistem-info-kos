@@ -1,16 +1,16 @@
 <section id="team" class="team section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Our Team</h2>
+          <h2>Pemilik Kos</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Orang dibalik Kos Bunna:
           </p>
         </div>
         <!-- End Section Title -->
 
         <div class="container">
-          <div class="row gy-4">
+          <div class="row justify-content-center">
+            <!-- Default row gy-4 -->
             <div
               class="col-xl-3 col-md-6 d-flex"
               data-aos="fade-up"
@@ -18,22 +18,21 @@
             >
               <div class="member">
                 <img
-                  src="assets/img/team/team-1.jpg"
+                  src="assets/img/team/placeholder.jpg"
                   class="img-fluid"
                   alt=""
                 />
-                <h4>Walter White</h4>
-                <span>Web Development</span>
+                <h4>Bu Anna</h4>
+                <span>Pemilik Kos</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <!-- End Team Member -->
-
+<!-- 
             <div
               class="col-xl-3 col-md-6 d-flex"
               data-aos="fade-up"
@@ -54,10 +53,10 @@
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- End Team Member -->
 
-            <div
+            <!-- <div
               class="col-xl-3 col-md-6 d-flex"
               data-aos="fade-up"
               data-aos-delay="300"
@@ -77,10 +76,10 @@
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- End Team Member -->
 
-            <div
+            <!-- <div
               class="col-xl-3 col-md-6 d-flex"
               data-aos="fade-up"
               data-aos-delay="400"
@@ -100,7 +99,7 @@
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- End Team Member -->
           </div>
         </div>

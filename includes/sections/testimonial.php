@@ -3,8 +3,7 @@
         <div class="container section-title" data-aos="fade-up">
           <h2>Testimoni</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Tanggapan para penyewa yang telah menempati Kos Bunna : 
           </p>
         </div>
         <!-- End Section Title -->
@@ -44,8 +43,8 @@
                     class="testimonial-img"
                     alt=""
                   />
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <h3>Budiono</h3>
+                  <h4>Mahasiswa</h4>
                   <div class="stars">
                     <i class="bi bi-star-fill"></i
                     ><i class="bi bi-star-fill"></i
@@ -56,10 +55,7 @@
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      >Proin iaculis purus consequat sem cure digni ssim donec
-                      porttitora entum suscipit rhoncus. Accusantium quam,
-                      ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                      risus at semper.</span
+                      >Saya sangat merekomendasikan kos ini! Tempatnya nyaman dan fasilitasnya lengkap!</span
                     >
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
@@ -67,7 +63,7 @@
               </div>
               <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-2.jpg"
@@ -94,10 +90,10 @@
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
+              </div> -->
               <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-3.jpg"
@@ -124,10 +120,10 @@
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
+              </div> -->
               <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-4.jpg"
@@ -154,10 +150,10 @@
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
+              </div> -->
               <!-- End testimonial item -->
 
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-5.jpg"
@@ -184,7 +180,7 @@
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
-              </div>
+              </div> -->
               <!-- End testimonial item -->
             </div>
             <div class="swiper-pagination"></div>

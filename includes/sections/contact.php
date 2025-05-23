@@ -3,8 +3,7 @@
         <div class="container section-title" data-aos="fade-up">
           <h2>Kontak kami</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Kontak yang dapat dihubungi :
           </p>
         </div>
         <!-- End Section Title -->
@@ -26,8 +25,8 @@
                 >
                   <i class="bi bi-geo-alt flex-shrink-0"></i>
                   <div>
-                    <h3>Address</h3>
-                    <p>A108 Adam Street, New York, NY 535022</p>
+                    <h3>Alamat</h3>
+                    <p>Jl.</p>
                   </div>
                 </div>
                 <!-- End Info Item -->
@@ -39,8 +38,8 @@
                 >
                   <i class="bi bi-telephone flex-shrink-0"></i>
                   <div>
-                    <h3>Call Us</h3>
-                    <p>+1 5589 55488 55</p>
+                    <h3>Hubungi Kami</h3>
+                    <p>+62 8951 4595 376</p>
                   </div>
                 </div>
                 <!-- End Info Item -->
@@ -52,8 +51,8 @@
                 >
                   <i class="bi bi-envelope flex-shrink-0"></i>
                   <div>
-                    <h3>Email Us</h3>
-                    <p>info@example.com</p>
+                    <h3>Email Kami</h3>
+                    <p>kosbunna@gmail.com</p>
                   </div>
                 </div>
                 <!-- End Info Item -->
@@ -65,8 +64,8 @@
                 >
                   <i class="bi bi-clock flex-shrink-0"></i>
                   <div>
-                    <h3>Open Hours:</h3>
-                    <p>Mon-Sat: 11AM - 23PM</p>
+                    <h3>Jam Pelayanan</h3>
+                    <p>06:00 - 23:00</p>
                   </div>
                 </div>
                 <!-- End Info Item -->

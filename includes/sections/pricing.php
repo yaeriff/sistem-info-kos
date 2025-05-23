@@ -1,3 +1,8 @@
+<link
+  href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+
 <section id="pricing" class="pricing section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -7,34 +12,38 @@
         <!-- End Section Title -->
 
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
-          <div class="row g-4">
+          <div class="row justify-content-center">
             <div class="col-lg-4">
               <div class="pricing-item">
-                <h3>Kamar 3 orang</h3>
+                <h3>Kamar</h3>
                 <div class="icon">
-                  <i class="bi bi-box"></i>
+                  <i class="bi bi-house"></i>
                 </div>
-                <h4><sup>Rp</sup>270k<span> / month</span></h4>
+                <h4><sup>Rp</sup>800rb<span> / bulan</span><span><br>Bisa dibagi jumlah orang<br>Contoh: 2 Orang - 400k</span></h4>
                 <ul>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Quam adipiscing vitae proin</span>
+                    <span>Kasur</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Nec feugiat nisl pretium</span>
+                    <span>Kipas Angin</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Nulla at volutpat diam uteera</span>
+                    <span>Lemari Baju</span>
                   </li>
-                  <li class="na">
-                    <i class="bi bi-x"></i>
-                    <span>Pharetra massa massa ultricies</span>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Wi-Fi</span>
                   </li>
-                  <li class="na">
-                    <i class="bi bi-x"></i>
-                    <span>Massa ultricies mi quis hendrerit</span>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Listrik</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Kamar Mandi Luar</span>
                   </li>
                 </ul>
                 <div class="text-center">
@@ -46,32 +55,36 @@
 
             <div class="col-lg-4">
               <div class="pricing-item featured">
-                <h3>Kamar 2 orang</h3>
+                <h3>Kamar+</h3>
                 <div class="icon">
-                  <i class="bi bi-rocket"></i>
+                  <i class="bi bi-house-up"></i>
                 </div>
 
-                <h4><sup>Rp</sup>400k<span> / month</span></h4>
+                <h4><sup>Rp</sup>1jt<span> / bulan</span><span><br>Bisa dibagi jumlah orang<br>Contoh: 2 Orang - 500k</span></h4>
                 <ul>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Quam adipiscing vitae proin</span>
+                    <span>Kasur</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Nec feugiat nisl pretium</span>
+                    <span>Air Conditioner (AC)</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Nulla at volutpat diam uteera</span>
+                    <span>Lemari Baju</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Pharetra massa massa ultricies</span>
+                    <span>Wi-Fi</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Massa ultricies mi quis hendrerit</span>
+                    <span>Listrik</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Kamar Mandi Luar</span>
                   </li>
                 </ul>
                 <div class="text-center">
@@ -81,40 +94,41 @@
             </div>
             <!-- End Pricing Item -->
 
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
               <div class="pricing-item">
-                <h3>Kamar 1 orang</h3>
+                <h3>Kamar untuk 1 orang</h3>
                 <div class="icon">
-                  <i class="bi bi-send"></i>
+                  <i class="bi bi-person-fill"></i>
                 </div>
-                <h4><sup>Rp</sup>800k<span> / month</span></h4>
+                <h4><sup>Rp</sup>800k<span> / bulan</span></h4>
                 <ul>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Quam adipiscing vitae proin</span>
+                    <span>Kasur</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Nec feugiat nisl pretium</span>
+                    <span>Kipas Angin</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Nulla at volutpat diam uteera</span>
+                    <span>Lemari Baju</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Pharetra massa massa ultricies</span>
+                    <span>Free Wi-Fi</span>
                   </li>
                   <li>
                     <i class="bi bi-check"></i>
-                    <span>Massa ultricies mi quis hendrerit</span>
+                    <span>Kamar Mandi Luar</span>
                   </li>
                 </ul>
                 <div class="text-center">
                   <a href="#" class="buy-btn">Cek Ketersediaan</a>
                 </div>
               </div>
-            </div>
+            </div> -->
+
             <!-- End Pricing Item -->
           </div>
         </div>

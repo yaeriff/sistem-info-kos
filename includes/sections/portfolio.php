@@ -1,10 +1,9 @@
 <section id="portfolio" class="portfolio section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
+          <h2>Fasilitas</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Beberapa fasilitas yang ditawarkan oleh Kos Bunna :
           </p>
         </div>
         <!-- End Section Title -->
@@ -16,7 +15,7 @@
             data-layout="masonry"
             data-sort="original-order"
           >
-            <ul
+            <!-- <ul
               class="portfolio-filters isotope-filters"
               data-aos="fade-up"
               data-aos-delay="100"
@@ -26,7 +25,7 @@
               <li data-filter=".filter-product">Product</li>
               <li data-filter=".filter-branding">Branding</li>
               <li data-filter=".filter-books">Books</li>
-            </ul>
+            </ul> -->
             <!-- End Portfolio Filters -->
 
             <div
@@ -39,21 +38,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/app-1.jpg"
+                    href="assets/img/fasilitas/kasur.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/app-1.jpg"
+                      src="assets/img/fasilitas/kasur.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >App 1</a
+                        >Kasur</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Kasur yang nyaman, lengkap dengan bantal dan sprei.</p>
                   </div>
                 </div>
               </div>
@@ -64,21 +63,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/product-1.jpg"
+                    href="assets/img/fasilitas/kipasangin.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/product-1.jpg"
+                      src="assets/img/fasilitas/kipasangin.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Product 1</a
+                        >Kipas Angin</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Kipas angin yang menyejukkan.</p>
                   </div>
                 </div>
               </div>
@@ -89,21 +88,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/branding-1.jpg"
+                    href="assets/img/fasilitas/lemaribaju.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/branding-1.jpg"
+                      src="assets/img/fasilitas/lemaribaju.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Branding 1</a
+                        >Lemari Baju</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Lemari untuk menyimpan pakaian Anda.</p>
                   </div>
                 </div>
               </div>
@@ -114,21 +113,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/books-1.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/books-1.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Books 1</a
+                        >Free Wi-Fi</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Wi-Fi gratis untuk menunjang aktivitas Anda.</p>
                   </div>
                 </div>
               </div>
@@ -139,21 +138,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/app-2.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/app-2.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >App 2</a
+                        >Kamar Mandi Luar</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Kamar mandi untuk membersihkan diri Anda.</p>
                   </div>
                 </div>
               </div>
@@ -164,21 +163,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/product-2.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/product-2.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Product 2</a
+                        >TV Bersama</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>TV untuk menonton acara favorit Anda.</p>
                   </div>
                 </div>
               </div>
@@ -189,21 +188,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/branding-2.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/branding-2.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Branding 2</a
+                        >Jemuran Bersama</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Jemuran untuk mengeringkan pakaian Anda.</p>
                   </div>
                 </div>
               </div>
@@ -214,21 +213,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/books-2.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/books-2.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Books 2</a
+                        >Balkon Lantai 2</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Tempat untuk melihat pemandangan.</p>
                   </div>
                 </div>
               </div>
@@ -239,21 +238,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/app-3.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/app-3.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >App 3</a
+                        >Tempat Parkir</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Tempat untuk memakirkan kendaraan Anda.</p>
                   </div>
                 </div>
               </div>
@@ -264,21 +263,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/product-3.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/product-3.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Product 3</a
+                        >Kompor Bersama</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Kompor untuk memasak makanan Anda. Ini sudah termasuk fasilitas untuk Gas Elpiji.</p>
                   </div>
                 </div>
               </div>
@@ -289,21 +288,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/branding-3.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/branding-3.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Branding 3</a
+                        >Air Conditioner (AC)</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>AC yang menyejukkan.</p>
                   </div>
                 </div>
               </div>
@@ -314,21 +313,21 @@
               >
                 <div class="portfolio-content h-100">
                   <a
-                    href="assets/img/portfolio/books-3.jpg"
+                    href="assets/img/fasilitas/placeholder.jpg"
                     data-gallery="portfolio-gallery-app"
                     class="glightbox"
                     ><img
-                      src="assets/img/portfolio/books-3.jpg"
+                      src="assets/img/fasilitas/placeholder.jpg"
                       class="img-fluid"
                       alt=""
                   /></a>
                   <div class="portfolio-info">
                     <h4>
                       <a href="portfolio-details.html" title="More Details"
-                        >Books 3</a
+                        >Akun Kos</a
                       >
                     </h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    <p>Akun untuk melihat informasi seputar kos.</p>
                   </div>
                 </div>
               </div>

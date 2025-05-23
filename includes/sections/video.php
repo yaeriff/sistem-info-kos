@@ -18,12 +18,9 @@
     >
       <div class="col-xl-10">
         <div class="text-center d-flex flex-column gap-5 align-items-center">
-          <h3 style="color: #fff;">Call To Action</h3>
+          <h3 style="color: #fff;">Klik untuk Melihat Vidio</h3>
           <p style="color: #fff;">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            Vidio ini berisi tentang bagaimana suasana kos dan fasilitas yang ditawarkan.
           </p>
           <a 
           id="cta-btn" 

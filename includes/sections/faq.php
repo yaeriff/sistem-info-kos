@@ -7,9 +7,7 @@
                   <span>Frequently Asked </span><strong>Questions</strong>
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Duis aute irure dolor in reprehenderit
+                  Pertanyaan yang sering ditanyakan oleh para calon penyewa
                 </p>
               </div>
             </div>
@@ -19,14 +17,11 @@
                 <div class="faq-item faq-active">
                   <h3>
                     <span class="num">1.</span>
-                    <span>Non consectetur a erat nam at lectus urna duis?</span>
+                    <span>Berapa harga sewa kos per bulan?</span>
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna
-                      id volutpat lacus laoreet non curabitur gravida. Venenatis
-                      lectus magna fringilla urna porttitor rhoncus dolor purus
-                      non.
+                      Harga sewa mulai dari Rp.800rb/bulan atau bisa juga dibagi per orang, misalkan jika ada penyewa berjumlah 2 orang dalam satu kamar, maka per orang cukup membayar 400rb/bulan. Harga sewa ini juga tergantung tipe kamar.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -37,18 +32,12 @@
                   <h3>
                     <span class="num">2.</span>
                     <span
-                      >Feugiat scelerisque varius morbi enim nunc faucibus a
-                      pellentesque?</span
+                      >Apakah kos ini khusus untuk laki-laki atau perempuan?</span
                     >
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque
-                      habitant morbi. Id interdum velit laoreet id donec
-                      ultrices. Fringilla phasellus faucibus scelerisque
-                      eleifend donec pretium. Est pellentesque elit ullamcorper
-                      dignissim. Mauris ultrices eros in cursus turpis massa
-                      tincidunt dui.
+                      Kos Bunna dikhususkan untuk laki-laki.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -59,18 +48,12 @@
                   <h3>
                     <span class="num">3.</span>
                     <span
-                      >Dolor sit amet consectetur adipiscing elit
-                      pellentesque?</span
+                      >Apakah tersedia parkiran untuk kendaraan?</span
                     >
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-                      sagittis orci. Faucibus pulvinar elementum integer enim.
-                      Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                      tellus pellentesque eu tincidunt. Lectus urna duis
-                      convallis convallis tellus. Urna molestie at elementum eu
-                      facilisis sed odio morbi quis
+                      Ya, Kos Bunna menyediakan tempat untuk memarkirkan kendaraan Anda.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -81,18 +64,12 @@
                   <h3>
                     <span class="num">4.</span>
                     <span
-                      >Ac odio tempor orci dapibus. Aliquam eleifend mi in
-                      nulla?</span
+                      >Apakah boleh memasak di kos?</span
                     >
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Dolor sit amet consectetur adipiscing elit pellentesque
-                      habitant morbi. Id interdum velit laoreet id donec
-                      ultrices. Fringilla phasellus faucibus scelerisque
-                      eleifend donec pretium. Est pellentesque elit ullamcorper
-                      dignissim. Mauris ultrices eros in cursus turpis massa
-                      tincidunt dui.
+                      Tentu saja, kami juga menyediakan kompos gas beserta dengan gas elpijinya agar Anda dapat memasak makanan favorit Anda!
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
@@ -103,17 +80,12 @@
                   <h3>
                     <span class="num">5.</span>
                     <span
-                      >Tempus quam pellentesque nec nam aliquam sem et tortor
-                      consequat?</span
+                      >Bagaimana cara menyewa dan melihat kamar?</span
                     >
                   </h3>
                   <div class="faq-content">
                     <p>
-                      Molestie a iaculis at erat pellentesque adipiscing
-                      commodo. Dignissim suspendisse in est ante in. Nunc vel
-                      risus commodo viverra maecenas accumsan. Sit amet nisl
-                      suscipit adipiscing bibendum est. Purus gravida quis
-                      blandit turpis cursus in
+                      Untuk menyewa, silahkan hubungi kami melalui No. Telp berikut: +62 8951 4595 376 atau bisa juga datang langsung ke alamat kami untuk melihat kamar secara langsung. Untuk melihat kamar bisa juga melalui laman resmi kami ini, langsung saja kebagian Fasilitas kamar diatas.
                     </p>
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>

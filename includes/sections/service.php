@@ -1,10 +1,9 @@
 <section id="services" class="services section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Our Services</h2>
+          <h2>Pelayanan</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Kos Bunna menawarkan beberapa pelayanan yang tentunya sangat menarik!
           </p>
         </div>
         <!-- End Section Title -->
@@ -18,16 +17,14 @@
             >
               <div class="service-item position-relative">
                 <div class="icon">
-                  <i class="bi bi-activity"></i>
+                  <i class="bi bi-house"></i>
                 </div>
-                <h3>Nesciunt Mete</h3>
+                <h3>Kamar yang Nyaman</h3>
                 <p>
-                  Provident nihil minus qui consequatur non omnis maiores. Eos
-                  accusantium minus dolores iure perferendis tempore et
-                  consequatur.
+                  Kami menjamin bahwa kamar yang kami sediakan sangatlah nyaman. Jika penyewa belum merasa nyaman, maka kami akan segera meningkatkan pelayanan kamar kami. <i class="bi bi-emoji-smile"></i>
                 </p>
                 <a href="service-details.html" class="readmore stretched-link"
-                  >Read more <i class="bi bi-arrow-right"></i
+                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -40,15 +37,14 @@
             >
               <div class="service-item position-relative">
                 <div class="icon">
-                  <i class="bi bi-broadcast"></i>
+                  <i class="bi bi-house-gear"></i>
                 </div>
-                <h3>Eosle Commodi</h3>
+                <h3>Perbaikan Fasilitas</h3>
                 <p>
-                  Ut autem aut autem non a. Sint sint sit facilis nam iusto
-                  sint. Libero corrupti neque eum hic non ut nesciunt dolorem.
+                  Jika ada fasilitas yang terlihat kurang layak atau rusak, maka kami akan segera mengantinya dengan yang baru.
                 </p>
                 <a href="service-details.html" class="readmore stretched-link"
-                  >Read more <i class="bi bi-arrow-right"></i
+                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -61,15 +57,14 @@
             >
               <div class="service-item position-relative">
                 <div class="icon">
-                  <i class="bi bi-easel"></i>
+                  <i class="bi bi-wifi"></i>
                 </div>
-                <h3>Ledo Markt</h3>
+                <h3>Wi-Fi Kencang</h3>
                 <p>
-                  Ut excepturi voluptatem nisi sed. Quidem fuga consequatur.
-                  Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.
+                  Kami menawarkan Wi-Fi gratis yang tentunya cukup kencang dan stabil. Sehingga penyewa tidak perlu khawatir dengan jaringan Wi-Fi yang buruk.
                 </p>
                 <a href="service-details.html" class="readmore stretched-link"
-                  >Read more <i class="bi bi-arrow-right"></i
+                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -82,15 +77,14 @@
             >
               <div class="service-item position-relative">
                 <div class="icon">
-                  <i class="bi bi-bounding-box-circles"></i>
+                  <i class="bi bi-wallet2"></i>
                 </div>
-                <h3>Asperiores Commodit</h3>
+                <h3>Harga Ramah Dikantong</h3>
                 <p>
-                  Non et temporibus minus omnis sed dolor esse consequatur.
-                  Cupiditate sed error ea fuga sit provident adipisci neque.
+                  Kami menyediakan pilihan kamar yang memiliki fasilitas lengkap namun dengan harga yang ramah dikantong.
                 </p>
                 <a href="service-details.html" class="readmore stretched-link"
-                  >Read more <i class="bi bi-arrow-right"></i
+                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -103,21 +97,20 @@
             >
               <div class="service-item position-relative">
                 <div class="icon">
-                  <i class="bi bi-calendar4-week"></i>
+                  <i class="bi bi-person-circle"></i>
                 </div>
-                <h3>Velit Doloremque</h3>
+                <h3>Akun Kos</h3>
                 <p>
-                  Cumque et suscipit saepe. Est maiores autem enim facilis ut
-                  aut ipsam corporis aut. Sed animi at autem alias eius labore.
+                  Setiap penyewa akan mendapatkan satu akun untuk mengecek informasi seputar kos hingga akses untuk fitur-fitur khusus pada laman resmi kami.
                 </p>
                 <a href="service-details.html" class="readmore stretched-link"
-                  >Read more <i class="bi bi-arrow-right"></i
+                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
                 ></a>
               </div>
             </div>
             <!-- End Service Item -->
 
-            <div
+            <!-- <div
               class="col-lg-4 col-md-6"
               data-aos="fade-up"
               data-aos-delay="600"
@@ -135,7 +128,7 @@
                   >Read more <i class="bi bi-arrow-right"></i
                 ></a>
               </div>
-            </div>
+            </div> -->
             <!-- End Service Item -->
           </div>
         </div>

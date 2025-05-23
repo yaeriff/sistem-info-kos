@@ -9,7 +9,7 @@
         class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
       >
         <h2>
-          <span>Hallo calon </span><span class="accent">Penyewa!</span>
+          <span>Halo, calon </span><span class="accent">Penyewa!</span>
         </h2>
         <p>
           Selamat datang di layanan penyewaan kamar kos! Kami menawarkan kamar kos yang nyaman dan strategis, cocok untuk mahasiswa maupun pekerja yang mencari tempat tinggal praktis dan tenang di tengah kesibukan kota.
@@ -46,7 +46,7 @@
                     </svg>
                   </div>
                   <h4 class="title">
-                    <a href="" class="stretched-link">MURAH</a>
+                    <a href="" class="stretched-link">LENGKAP</a>
                   </h4>
                 </div>
               </div>

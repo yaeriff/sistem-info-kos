@@ -11,7 +11,7 @@
         ><span>+62 8951 4595 376</span></i
       >
     </div>
-    <button class="btn btn-sm px-4" id="login" type="submit">Login</button>
+    <button class="btn btn-sm px-4" id="login" type="submit">Masuk</button>
   </div>
 </div>
       <!-- End Top Bar -->
@@ -36,7 +36,7 @@
         <li><a href="#about">Tentang Kos</a></li>
         <li><a href="#services">Pelayanan</a></li>
         <li><a href="#portfolio">Fasilitas</a></li>
-        <li><a href="#team">Pembayaran</a></li>
+        <li><a href="#pricing">Pembayaran</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
