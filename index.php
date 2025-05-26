@@ -90,7 +90,7 @@
 
       <!-- Portfolio Section -->
         <?php 
-          include 'includes/sections/portfolio.php';
+          include 'includes/sections/kamar.php';
         ?>
       <!-- /Portfolio Section -->
 
@@ -99,12 +99,6 @@
           include 'includes/sections/team.php';
         ?>
       <!-- /Team Section -->
-
-      <!-- Pricing Section -->
-        <?php 
-          include 'includes/sections/pricing.php';
-        ?>
-      <!-- /Pricing Section -->
 
       <!-- Faq Section -->
         <?php 
