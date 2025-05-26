@@ -27,7 +27,7 @@
           ]
       ];
       $context = stream_context_create($options);
-      $result = @file_get_contents("http://localhost/backend/api/login.php", false, $context);
+      $result = @file_get_contents("http://localhost/backend/api/auth/login.php", false, $context);
 
       if ($result === FALSE) {
           echo "Gagal menghubungi server.";
