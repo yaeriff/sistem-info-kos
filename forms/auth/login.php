@@ -36,6 +36,8 @@
           if ($res['status']) {
               $_SESSION['token'] = $res['token'];
               $_SESSION['user'] = $email;
+              $_SESSION['nama'] = $res['data']['nama'];
+              
               header("Location: ../../index.php"); // redirect ke homepage
               exit;
           } else {
