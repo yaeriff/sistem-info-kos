@@ -77,7 +77,7 @@
           $res = json_decode($result, true);
           if ($res['status']) {
               $_SESSION['token'] = $res['token'];
-              $_SESSION['user'] = $email;
+              $_SESSION['user'] = $res['data']['id'];
               $_SESSION['nama'] = $res['data']['nama'];
               
               header("Location: ../../index.php"); // redirect ke homepage
