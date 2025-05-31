@@ -3,10 +3,12 @@
 session_start(); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+      $nama = $_POST['nama'];
       $email = $_POST['email'];
+      $phone = $_POST['phone'];
       $password = $_POST['password'];
 
-      $data = ['email' => $email, 'password' => $password];
+      $data = ['nama' => $nama, 'email' => $email, 'phone' => $phone, 'password' => $password];
       $options = [
           'http' => [
               'header'  => "Content-type: application/json",
@@ -40,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Masuk</title>
+    <title>Daftar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     
@@ -48,27 +50,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   <body>
     <div class="container">
       <div class="box form-box">
-        <header>Login</header>
+        <header>Register</header>
         <form action="" method="post">
 
           <div class="field input">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <label for="nama">Nama</label>
+            <input type="email" name="nama" id="nama" autocomplete="off" required>
           </div>
 
           <div class="field input">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" autocomplete="off" required>
+          </div>
+
+          <div class="field input">
+            <label for="phone">No Telp</label>
+            <input type="number" name="phone" id="phone" autocomplete="off" required>
+          </div>
+
+          <div class="field input">
+            <label for="password">Buat Password</label>
+            <input type="password" name="password" id="password" autocomplete="off" required>
           </div>
 
           <div class="field">
-            <input type="submit" class="btn" name="submit" value="login" required>
+            <input type="submit" class="btn" name="submit" value="login" autocomplete="off" required>
           </div>
           <div class="links">
-            Belum punya akun? <a href="register.php">Daftar Sekarang!</a>
+            Sudah punya akun? <a href="login.php">Login Sekarang!</a>
           </div>
         </form>
       </div>
     </div>
   </body>
 </html>
+
