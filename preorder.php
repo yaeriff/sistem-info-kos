@@ -1,51 +1,16 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require_once 'helper/connection.php';
+session_start();
 
-// Cek login
 if (!isset($_SESSION['user'])) {
-    header("Location: forms/auth/login.php");
-    exit();
+  header('Location: forms/auth/login.php');
+  exit;
 }
 
-// Ambil data POST dari halaman kamar.php via form submit
-$id_kamar = $_POST['id_kamar'] ?? '';
-$nama_kamar = $_POST['nama_kamar'] ?? '';
-$tipe_kamar = $_POST['tipe_kamar'] ?? '';
-$nama_user = $_SESSION['nama'] ?? '';
 
-// Result response dari backend upload.php
-$result = [];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
-    $postData = [
-        'user' => $_SESSION['user'],
-        'id_kamar' => $_POST['id_kamar'],
-        'tanggal_mulai' => $_POST['tanggal_mulai'],
-        'durasi' => $_POST['durasi'],
-        'catatan' => $_POST['catatan'] ?? '',
-    ];
-
-    $file = $_FILES['file'];
-    $cfile = new CURLFile($file['tmp_name'], mime_content_type($file['tmp_name']), $file['name']);
-
-    $postData['file'] = $cfile;
-
-    $curl = curl_init();
-    curl_setopt_array($curl, [
-        CURLOPT_URL => 'http://localhost/backend/api/upload.php',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => $postData,
-    ]);
-
-    $response = curl_exec($curl);
-    curl_close($curl);
-
-    $result = json_decode($response, true);
-}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

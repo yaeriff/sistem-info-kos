@@ -1,38 +1,26 @@
 <!-- login.php -->
 <?php
-session_start(); 
+require_once '../../helper/connection.php';
+session_start();
+if (isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-      $email = $_POST['email'];
-      $password = $_POST['password'];
+  //$sql = "SELECT * FROM login WHERE username='$username' and password='$password' LIMIT 1";
+  $sql = "SELECT * FROM user WHERE email='$email'";
 
-      $data = ['email' => $email, 'password' => $password];
-      $options = [
-          'http' => [
-              'header'  => "Content-type: application/json",
-              'method'  => 'POST',
-              'content' => json_encode($data)
-          ]
-      ];
-      $context = stream_context_create($options);
-      $result = @file_get_contents("http://localhost/backend/api/auth/login.php", false, $context);
+  $result = mysqli_query($connection, $sql);
+  $row = mysqli_fetch_assoc($result);
+  var_dump($row);
 
-      if ($result === FALSE) {
-          echo "Gagal menghubungi server.";
-      } else {
-          $res = json_decode($result, true);
-          if ($res['status']) {
-              $_SESSION['token'] = $res['token'];
-              $_SESSION['user'] = $res['data']['id'];
-              $_SESSION['nama'] = $res['data']['nama'];
-              
-              header("Location: ../../index.php"); // redirect ke homepage
-              exit;
-          } else {
-              echo "<p style='color:red;'>Login gagal: " . $res['message'] . "</p>";
-          }
-      }
+  if ((mysqli_num_rows($result) === 1) && ($password==$row['password'])) {
+    $_SESSION['login'] = $row;
+    header('Location: ../../index.php');
+    exit;
+  } else {
+    $error = true;
   }
+}
 ?>
 
 <!doctype html>
