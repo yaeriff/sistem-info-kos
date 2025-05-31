@@ -2,18 +2,19 @@
 <?php
 require_once '../../helper/connection.php';
 session_start();
+
 if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  //$sql = "SELECT * FROM login WHERE username='$username' and password='$password' LIMIT 1";
-  $sql = "SELECT * FROM user WHERE email='$email'";
-
-  $result = mysqli_query($connection, $sql);
+  $sql = "SELECT * FROM pengguna WHERE email = ?";
+  $stmt = mysqli_prepare($connection, $sql);
+  mysqli_stmt_bind_param($stmt, "s", $email);
+  mysqli_stmt_execute($stmt);
+  $result = mysqli_stmt_get_result($stmt);
   $row = mysqli_fetch_assoc($result);
-  var_dump($row);
 
-  if ((mysqli_num_rows($result) === 1) && ($password==$row['password'])) {
+  if ($row && password_verify($password, $row['password'])) {
     $_SESSION['login'] = $row;
     header('Location: ../../index.php');
     exit;
@@ -36,7 +37,10 @@ if (isset($_POST['submit'])) {
   <body>
     <div class="container">
       <div class="box form-box">
-        <header>Login</header>
+        <?php if (isset($error)): ?>
+          <div class="alert alert-danger">Email atau password salah!</div>
+        <?php endif; ?>
+        <div class="text-center mb-4 fs-4 fw-bold">Login</div>
         <form action="" method="post">
 
           <div class="field input">
@@ -56,6 +60,7 @@ if (isset($_POST['submit'])) {
             Belum punya akun? <a href="register.php">Daftar Sekarang!</a>
           </div>
         </form>
+
       </div>
     </div>
   </body>

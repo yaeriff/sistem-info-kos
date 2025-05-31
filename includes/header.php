@@ -21,7 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div>
       <?php if (isset($_SESSION['login'])): ?>
         <a href="forms/auth/logout.php" class="btn btn-sm btn-danger px-4">
-          Logout (<?= htmlspecialchars($_SESSION['login']['nama']) ?>)
+          Logout (<?= htmlspecialchars($_SESSION['login']['nama_pengguna']) ?>)
         </a>
       <?php else: ?>
         <a href="forms/auth/login.php" class="btn btn-sm btn-primary px-4">Login</a>
