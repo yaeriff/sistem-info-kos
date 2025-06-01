@@ -10,40 +10,37 @@ if (session_status() == PHP_SESSION_NONE) {
 <div class="topbar d-flex align-items-center">
   <div class="container d-flex justify-content-center justify-content-md-between">
     <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope d-flex align-items-center"
-        ><a href="kosbunna@gmail.com">kosbunna@gmail.com</a></i
-      >
-      <i class="bi bi-phone d-flex align-items-center ms-4"
-        ><span>+62 8951 4595 376</span></i
-      >
+      <i class="bi bi-envelope d-flex align-items-center">
+        <a href="mailto:kosbunna@gmail.com">kosbunna@gmail.com</a>
+      </i>
+      <i class="bi bi-phone d-flex align-items-center ms-4">
+        <span>+62 8951 4595 376</span>
+      </i>
     </div>
-     <!-- Login / Logout Button -->
-    <?php if (isset($_SESSION['user'])): ?>
-      <a href="forms/auth/logout.php" class="btn btn-sm btn-danger px-4">Logout (<?= htmlspecialchars($_SESSION['user']) ?>)</a>
-    <?php else: ?>
-      <a href="forms/auth/login.php" class="btn btn-sm btn-primary px-4">Login</a>
-    <?php endif; ?>
+    <!-- Login / Logout Button -->
+    <div>
+      <?php if (isset($_SESSION['login'])): ?>
+        <a href="forms/auth/logout.php" class="btn btn-sm btn-danger px-4">
+          Logout (<?= htmlspecialchars($_SESSION['login']['nama_pengguna']) ?>)
+        </a>
+      <?php else: ?>
+        <a href="forms/auth/login.php" class="btn btn-sm btn-primary px-4">Login</a>
+      <?php endif; ?>
+    </div>
   </div>
 </div>
-      <!-- End Top Bar -->
-<div
-  class="branding d-flex align-items-center"
-  id="branding"
->
-  <div
-    class="container position-relative d-flex align-items-center justify-content-between"
-  >
-    <a href="index.html" class="logo d-flex align-items-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <img src="assets/img/logo-KosBunna.png" alt="" width="50px">
+<!-- End Top Bar -->
+
+<div class="branding d-flex align-items-center" id="branding">
+  <div class="container position-relative d-flex align-items-center justify-content-between">
+    <a href="index.php" class="logo d-flex align-items-center">
+      <img src="assets/img/logo-KosBunna.png" alt="Logo KosBunna" width="50px" />
       <h1 class="sitename">Kos Bunna</h1>
       <span>.</span>
     </a>
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li>
-          <a href="#hero" >Beranda<br /></a>
-        </li>
+        <li><a href="#hero">Beranda<br /></a></li>
         <li><a href="#about">Tentang Kos</a></li>
         <li><a href="#services">Pelayanan</a></li>
         <li><a href="#portfolio">Fasilitas</a></li>
@@ -54,6 +51,5 @@ if (session_status() == PHP_SESSION_NONE) {
     </nav>
   </div>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

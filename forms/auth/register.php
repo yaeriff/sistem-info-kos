@@ -1,62 +1,40 @@
-<!-- register.php -->
+<!-- login.php -->
 <?php
 session_start(); 
-$db_host = 'localhost';
-$db_user = 'root';
-$db_pass = '';         // isi dengan password MySQL Anda
-$db_name = 'kos'; // ganti dengan nama database Anda
 
-// Buat koneksi
-$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+      $nama = $_POST['nama'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $password = $_POST['password'];
 
-// Proses form jika disubmit
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-    
-    // Ambil data dari form
-    $nama     = isset($_POST['nama']) ? trim($_POST['nama']) : '';
-    $email    = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $phone    = isset($_POST['phone']) ? trim($_POST['phone']) : '';
-    $password = isset($_POST['password']) ? trim($_POST['password']) : null;
+      $data = ['nama' => $nama, 'email' => $email, 'phone' => $phone, 'password' => $password];
+      $options = [
+          'http' => [
+              'header'  => "Content-type: application/json",
+              'method'  => 'POST',
+              'content' => json_encode($data)
+          ]
+      ];
+      $context = stream_context_create($options);
+      $result = @file_get_contents("http://localhost/backend/api/auth/login.php", false, $context);
 
-    // Validasi sederhana (bisa diperluas)
-    if (empty($nama) || empty($email) || empty($phone) || empty($password)) {
-        echo "<p style='color:red;'>Semua kolom harus diisi.</p>";
-    } else {
-        // Cek apakah email sudah terdaftar
-        $stmt = $conn->prepare("SELECT id FROM user WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->store_result();
-        if ($stmt->num_rows > 0) {
-            $errore = true;
-            $stmt->close();
-        } else {
-            $stmt->close();
-
-            // Hash password sebelum disimpan (gunakan password_hash)
-            $plain_password = $password;
-
-            // Siapkan statement untuk insert data
-            $insert = $conn->prepare("INSERT INTO user (nama, email, phone, password) VALUES (?, ?, ?, ?)");
-            $insert->bind_param("ssss", $nama, $email, $phone, $plain_assword);
-
-            if ($insert->execute()) {
-                // Jika berhasil, redirect ke halaman login.php
-                header("Location: login.php");
-                exit();
-            } else {
-                echo "<p style='color:red;'>Terjadi kesalahan: " . $conn->error . "</p>";
-            }
-
-            $insert->close();
-        }
-    }
-}
-
-$conn->close();
+      if ($result === FALSE) {
+          echo "Gagal menghubungi server.";
+      } else {
+          $res = json_decode($result, true);
+          if ($res['status']) {
+              $_SESSION['token'] = $res['token'];
+              $_SESSION['user'] = $res['data']['id'];
+              $_SESSION['nama'] = $res['data']['nama'];
+              
+              header("Location: ../../index.php"); // redirect ke homepage
+              exit;
+          } else {
+              echo "<p style='color:red;'>Login gagal: " . $res['message'] . "</p>";
+          }
+      }
+  }
 ?>
 
 <!doctype html>
@@ -67,17 +45,18 @@ $conn->close();
     <title>Daftar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
   </head>
 
   <body>
     <div class="container">
       <div class="box form-box">
-        <header>Buat Akun Baru</header>
+        <header>Register</header>
         <form action="" method="post">
 
           <div class="field input">
             <label for="nama">Nama</label>
-            <input type="text" name="nama" id="nama" autocomplete="off" required>
+            <input type="email" name="nama" id="nama" autocomplete="off" required>
           </div>
 
           <div class="field input">
@@ -86,8 +65,8 @@ $conn->close();
           </div>
 
           <div class="field input">
-            <label for="phone">No Telp</label>
-            <input type="number" name="phone" id="phone" autocomplete="off" required>
+            <label for="telepon">No. Telepon</label>
+            <input type="number" name="telepon" id="telepon" autocomplete="off" required>
           </div>
 
           <div class="field input">
@@ -100,7 +79,7 @@ $conn->close();
           <?php endif ?>
 
           <div class="field">
-            <input type="submit" class="btn" name="submit" value="Daftar" autocomplete="off" required>
+            <input type="submit" class="btn" name="submit" value="login" autocomplete="off" required>
           </div>
           <div class="links">
             Sudah punya akun? <a href="login.php">Login Sekarang!</a>

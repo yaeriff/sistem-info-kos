@@ -1,10 +1,11 @@
 <!-- login.php -->
 <?php
-session_start(); 
+require_once '../../helper/connection.php';
+session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-      $email = $_POST['email'];
-      $password = $_POST['password'];
+if (isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
       $data = ['email' => $email, 'password' => $password];
       $options = [
@@ -29,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
               header("Location: ../../index.php"); // redirect ke homepage
               exit;
           } else {
-              $error = true;
+              echo "<p style='color:red;'>Login gagal: " . $res['message'] . "</p>";
           }
-      }
+      // }
   }
 ?>
 
@@ -48,7 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   <body>
     <div class="container">
       <div class="box form-box">
-        <header>Login</header>
+        <?php if (isset($error)): ?>
+          <div class="alert alert-danger">Email atau password salah!</div>
+        <?php endif; ?>
+        <div class="text-center mb-4 fs-4 fw-bold">Login</div>
         <form action="" method="post">
 
           <div class="field input">
@@ -72,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             Belum punya akun? <a href="register.php">Daftar Sekarang!</a>
           </div>
         </form>
+
       </div>
     </div>
   </body>
