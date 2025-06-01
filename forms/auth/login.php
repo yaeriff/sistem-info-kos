@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
               header("Location: ../../index.php"); // redirect ke homepage
               exit;
           } else {
-              echo "<p style='color:red;'>Login gagal: " . $res['message'] . "</p>";
+              $error = true;
           }
       }
   }
@@ -43,8 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <title>Masuk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    
   </head>
+
   <body>
     <div class="container">
       <div class="box form-box">
@@ -60,6 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
           </div>
+
+          <?php if(isset($error)) : ?>
+            <div class="alert alert-danger mt-2" role="alert">user atau password salah</div>
+          <?php endif ?>
 
           <div class="field">
             <input type="submit" class="btn" name="submit" value="login" required>
