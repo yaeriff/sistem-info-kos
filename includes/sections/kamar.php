@@ -1,8 +1,10 @@
 <?php
-session_start(); // Tambahkan ini agar $_SESSION bisa digunakan
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once 'helper/connection.php';
 
-$query = "SELECT * FROM kamar";
+$query = "SELECT * FROM kamar LIMIT 6";
 $result = mysqli_query($connection, $query);
 if (!$result) {
     die("Query Error: " . mysqli_error($connection));
@@ -28,21 +30,23 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div class="portfolio-info">
               <h4><?php echo htmlspecialchars($kamar['nama_kamar']); ?></h4>
               <p><?php echo htmlspecialchars($kamar['deskripsi']); ?></p>
-              
               <p><strong>Harga:</strong> Rp<?php echo number_format($kamar['harga'], 0, ',', '.'); ?> / bulan</p>
 
-              <!-- Form Pre Order -->
               <form method="POST" action="<?= isset($_SESSION['login']) ? 'preorder.php' : 'forms/auth/login.php'; ?>">
                 <input type="hidden" name="id_kamar" value="<?= htmlspecialchars($kamar['id_kamar']); ?>">
                 <button type="submit" class="btn btn-primary" <?= ($kamar['status'] === 'terisi') ? 'disabled' : ''; ?>>
                   <?= ($kamar['status'] === 'terisi') ? 'Terisi' : 'Pre Order'; ?>
                 </button>
               </form>
-
             </div>
           </div>
         </div>
       <?php endforeach; ?>
+    </div>
+
+    <!-- Tombol Lihat Selengkapnya -->
+    <div class="text-center mt-4">
+      <a href="kamar.php" class="btn btn-outline-primary">Lihat Selengkapnya</a>
     </div>
   </div>
 </section>
