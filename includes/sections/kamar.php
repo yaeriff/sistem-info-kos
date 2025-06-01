@@ -1,4 +1,5 @@
 <?php
+session_start(); // Tambahkan ini agar $_SESSION bisa digunakan
 require_once 'helper/connection.php';
 
 $query = "SELECT * FROM kamar";
@@ -30,12 +31,14 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
               
               <p><strong>Harga:</strong> Rp<?php echo number_format($kamar['harga'], 0, ',', '.'); ?> / bulan</p>
 
-              <form action="preorder.php" method="POST">
+              <!-- Form Pre Order -->
+              <form method="POST" action="<?= isset($_SESSION['login']) ? 'preorder.php' : 'forms/auth/login.php'; ?>">
                 <input type="hidden" name="id_kamar" value="<?= htmlspecialchars($kamar['id_kamar']); ?>">
                 <button type="submit" class="btn btn-primary" <?= ($kamar['status'] === 'terisi') ? 'disabled' : ''; ?>>
                   <?= ($kamar['status'] === 'terisi') ? 'Terisi' : 'Pre Order'; ?>
                 </button>
               </form>
+
             </div>
           </div>
         </div>
