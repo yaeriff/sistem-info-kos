@@ -7,33 +7,19 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-      $data = ['email' => $email, 'password' => $password];
-      $options = [
-          'http' => [
-              'header'  => "Content-type: application/json",
-              'method'  => 'POST',
-              'content' => json_encode($data)
-          ]
-      ];
-      $context = stream_context_create($options);
-      $result = @file_get_contents("http://localhost/backend/api/auth/login.php", false, $context);
+  $sql = "SELECT * FROM pengguna WHERE email = ?";
+  $stmt = mysqli_prepare($connection, $sql);
+  mysqli_stmt_bind_param($stmt, "s", $email);
+  mysqli_stmt_execute($stmt);
+  $result = mysqli_stmt_get_result($stmt);
+  $row = mysqli_fetch_assoc($result);
 
-      if ($result === FALSE) {
-          echo "Gagal menghubungi server.";
-      } else {
-          $res = json_decode($result, true);
-          if ($res['status']) {
-              $_SESSION['token'] = $res['token'];
-              $_SESSION['user'] = $res['data']['id'];
-              $_SESSION['nama'] = $res['data']['nama'];
-              
-              header("Location: ../../index.php"); // redirect ke homepage
-              exit;
-          } else {
-              echo "<p style='color:red;'>Login gagal: " . $res['message'] . "</p>";
-          }
-      // }
+  if ($row && password_verify($password, $row['password'])) {
+    $_SESSION['login'] = $row;
+    header('Location: ../../index.php');
+    exit;
   }
+}
 ?>
 
 <!doctype html>
@@ -49,9 +35,7 @@ if (isset($_POST['submit'])) {
   <body>
     <div class="container">
       <div class="box form-box">
-        <?php if (isset($error)): ?>
-          <div class="alert alert-danger">Email atau password salah!</div>
-        <?php endif; ?>
+        
         <div class="text-center mb-4 fs-4 fw-bold">Login</div>
         <form action="" method="post">
 
@@ -66,7 +50,7 @@ if (isset($_POST['submit'])) {
           </div>
 
           <?php if(isset($error)) : ?>
-            <div class="alert alert-danger mt-2" role="alert">user atau password salah</div>
+            <div class="alert alert-danger mt-2" role="alert">email atau password salah</div>
           <?php endif ?>
 
           <div class="field">
