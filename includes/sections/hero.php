@@ -15,7 +15,7 @@
           Selamat datang di layanan penyewaan kamar kos! Kami menawarkan kamar kos yang nyaman dan strategis, cocok untuk mahasiswa maupun pekerja yang mencari tempat tinggal praktis dan tenang di tengah kesibukan kota.
         </p>
         <div class="d-flex">
-          <a href="#about" class="btn-get-started">Pesan Sekarang</a>
+          <a href="#portfolio" class="btn-get-started">Pesan Sekarang</a>
           <a
             href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
             target="_blank"
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="col-lg-5 order-1 order-lg-2">
-        <img src="assets/img/hero-img.svg" class="img-fluid" alt="" />
+        <img src="assets/img/hero/hero_cartoon.png" class="" alt="Cartoon" width="500px"  />
       </div>
     </div>
   </div>

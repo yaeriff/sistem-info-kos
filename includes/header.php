@@ -20,9 +20,23 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Login / Logout Button -->
     <div>
       <?php if (isset($_SESSION['login'])): ?>
-        <a href="forms/auth/logout.php" class="btn btn-sm btn-danger px-4">
-          Logout (<?= htmlspecialchars($_SESSION['login']['nama_pengguna']) ?>)
-        </a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle nav-link-lg nav-link-user" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1" style="color: white; width: 30px">
+              <div class="d-sm-none d-lg-inline-block" style="color: white; font-weight: bold;">Hi, <?= $_SESSION['login']['nama_pengguna'] ?></div>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+            <li><a class="dropdown-item" href="#">Pesan Masuk</a></li>
+            <li><a class="dropdown-item" href="riwayat.php">Riwayat Pemesanan</a></li>
+            <li>
+              <a href="../form/auth/logout.php" class="dropdown-item has-icon text-danger">
+                <i class="bi bi-box-arrow-left"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
       <?php else: ?>
         <a href="forms/auth/login.php" class="btn btn-sm btn-primary px-4">Login</a>
       <?php endif; ?>
@@ -45,9 +59,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php endif; ?>
         <li><a href="#hero">Beranda<br /></a></li>
         <li><a href="#about">Tentang Kos</a></li>
-        <li><a href="#services">Pelayanan</a></li>
-        <li><a href="#portfolio">Fasilitas</a></li>
-        <li><a href="pembayaran.php">Pembayaran</a></li>
+        <li><a href="#portfolio">Daftar Kamar</a></li>
         <li><a href="#contact">Kontak</a></li>
 
       </ul>
