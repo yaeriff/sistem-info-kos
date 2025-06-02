@@ -18,6 +18,8 @@ if (isset($_POST['submit'])) {
     $_SESSION['login'] = $row;
     header('Location: ../../index.php');
     exit;
+  } else {
+    $error = true;
   }
 }
 ?>

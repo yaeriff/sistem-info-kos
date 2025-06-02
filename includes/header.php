@@ -41,13 +41,13 @@ if (session_status() == PHP_SESSION_NONE) {
     <nav id="navmenu" class="navmenu">
       <ul>
         <?php if (isset($_SESSION['login'])): ?>
-          <li><a href="riwayat.php">Dashboard</a></li>
+          <li><a href="riwayat.php">Riwayat Pemesanan</a></li>
         <?php endif; ?>
         <li><a href="#hero">Beranda<br /></a></li>
         <li><a href="#about">Tentang Kos</a></li>
         <li><a href="#services">Pelayanan</a></li>
         <li><a href="#portfolio">Fasilitas</a></li>
-        <li><a href="#pricing">Pembayaran</a></li>
+        <li><a href="pembayaran.php">Pembayaran</a></li>
         <li><a href="#contact">Kontak</a></li>
 
       </ul>

@@ -78,61 +78,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
 <meta charset="UTF-8" />
 <title>Pre-Order Kamar</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="ordering.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container py-5">
-  <h1>Pre-Order Kamar</h1>
-
-  <form method="POST" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label class="form-label">Nama Pengguna</label>
-      <input type="text" class="form-control" value="<?= htmlspecialchars($nama_user) ?>" disabled>
-    </div>
-
-    <input type="hidden" name="id_kamar" value="<?= htmlspecialchars($id_kamar) ?>">
-    <div class="mb-3">
-      <label class="form-label">Nama Kamar</label>
-      <input type="text" class="form-control" value="<?= htmlspecialchars($nama_kamar) ?>" disabled>
-    </div>
-
-    <div class="mb-3">
-      <label for="tanggal_mulai" class="form-label">Tanggal Mulai</label>
-      <input type="date" id="tanggal_mulai" name="tanggal_mulai" class="form-control" required />
-    </div>
-
-    <div class="mb-3">
-      <label for="durasi" class="form-label">Durasi (bulan)</label>
-      <input type="number" id="durasi" name="durasi" class="form-control" min="1" required />
-    </div>
-
-    <div class="mb-3">
-      <label for="catatan" class="form-label">Catatan (opsional)</label>
-      <textarea id="catatan" name="catatan" class="form-control" rows="3"></textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="file" class="form-label">Upload KTP/KTM</label>
-      <input type="file" id="file" name="file" class="form-control" accept=".jpg,.jpeg,.png,.pdf" required />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit Pre-Order</button>
-    <?php if (!empty($result)): ?>
-      <div class="mt-4">
-        <?php if ($result['status'] === 'success'): ?>
-          <div class="alert alert-success">
-            Pre-Order berhasil!<br>
-            ID Pemesanan: <?= htmlspecialchars($result['id_pemesanan']) ?><br>
-            File: <?= htmlspecialchars($result['file']) ?>
-          </div>
-        <?php else: ?>
-          <div class="alert alert-danger">
-            Error: <?= htmlspecialchars($result['message']) ?>
-          </div>
-        <?php endif; ?>
+  <div class="container py-5">
+    <div class="box form-box">
+      <div>
+        <a href="index.php" type="button" class="btn btn-danger btn-close">Kembali</a>
       </div>
-    <?php endif; ?>
-  </form>
+      
+      <div class="text-center mb-4 fs-4 fw-bold">Pre-Order Kamar</div>
+      <form method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label">Nama Pengguna</label>
+        <input type="text" class="form-control" value="<?= htmlspecialchars($nama_user) ?>" disabled>
+      </div>
 
-</div>
+      <input type="hidden" name="id_kamar" value="<?= htmlspecialchars($id_kamar) ?>">
+      <div class="mb-3">
+        <label class="form-label">Nama Kamar</label>
+        <input type="text" class="form-control" value="<?= htmlspecialchars($nama_kamar) ?>" disabled>
+      </div>
+
+      <div class="mb-3">
+        <label for="tanggal_mulai" class="form-label">Tanggal Mulai</label>
+        <input type="date" id="tanggal_mulai" name="tanggal_mulai" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="durasi" class="form-label">Durasi (bulan)</label>
+        <input type="number" id="durasi" name="durasi" class="form-control" min="1" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="catatan" class="form-label">Catatan (opsional)</label>
+        <textarea id="catatan" name="catatan" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="file" class="form-label">Upload KTP/KTM</label>
+        <input type="file" id="file" name="file" class="form-control" accept=".jpg,.jpeg,.png,.pdf" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Pre-Order</button>
+      <?php if (!empty($result)): ?>
+        <div class="mt-4">
+          <?php if ($result['status'] === 'success'): ?>
+            <div class="alert alert-success">
+              Pre-Order berhasil!<br>
+              ID Pemesanan: <?= htmlspecialchars($result['id_pemesanan']) ?><br>
+              File: <?= htmlspecialchars($result['file']) ?>
+            </div>
+          <?php else: ?>
+            <div class="alert alert-danger">
+              Error: <?= htmlspecialchars($result['message']) ?>
+            </div>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+    </form> 
+    </div>
+    
+
+  </div>
 </body>
 </html>

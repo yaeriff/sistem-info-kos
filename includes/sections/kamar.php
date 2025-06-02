@@ -34,7 +34,9 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
               <form method="POST" action="<?= isset($_SESSION['login']) ? 'preorder.php' : 'forms/auth/login.php'; ?>">
                 <input type="hidden" name="id_kamar" value="<?= htmlspecialchars($kamar['id_kamar']); ?>">
-                <button type="submit" class="btn btn-primary" <?= ($kamar['status'] === 'terisi') ? 'disabled' : ''; ?>>
+                <br>
+                <button type="submit" class="btn btn-primary"
+                  <?= ($kamar['status'] === 'terisi') ? 'disabled' : ''; ?>>
                   <?= ($kamar['status'] === 'terisi') ? 'Terisi' : 'Pre Order'; ?>
                 </button>
               </form>
