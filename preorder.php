@@ -1,15 +1,75 @@
 <?php
-require_once 'helper/connection.php';
 session_start();
+require_once 'helper/connection.php';
 
-if (!isset($_SESSION['user'])) {
-  header('Location: forms/auth/login.php');
-  exit;
+if (!isset($_SESSION['login'])) {
+    header('Location: forms/auth/login.php');
+    exit;
 }
 
+// Ambil data user
+$nama_user = $_SESSION['login']['nama_pengguna'];
+$id_user = $_SESSION['login']['id'];
 
+// Ambil data kamar dari POST
+if (isset($_POST['id_kamar'])) {
+    $id_kamar = $_POST['id_kamar'];
+
+    $queryKamar = "SELECT * FROM kamar WHERE id_kamar = '$id_kamar'";
+    $resultKamar = mysqli_query($connection, $queryKamar);
+    $kamar = mysqli_fetch_assoc($resultKamar);
+
+    if (!$kamar) {
+        die("Kamar tidak ditemukan.");
+    }
+
+    $nama_kamar = $kamar['nama_kamar'];
+    $harga = $kamar['harga'];
+  } else {
+    die("Akses tidak valid.");
+  }
+
+$result = null;
+
+// Proses submit form
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
+    $tanggal_mulai = $_POST['tanggal_mulai'];
+    $durasi = $_POST['durasi'];
+    $catatan = $_POST['catatan'] ?? '';
+
+    // Proses upload file
+    $uploadDir = 'data/uploads/';
+    $fileName = basename($_FILES['file']['name']);
+    $uploadPath = $uploadDir . time() . '_' . $fileName;
+    $fileType = $_FILES['file']['type'];
+    $allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
+
+   if (!in_array($fileType, $allowedTypes)) {
+    $result = ['status' => 'error', 'message' => 'Tipe file tidak diizinkan.'];
+    
+  } elseif (move_uploaded_file($_FILES['file']['tmp_name'], $uploadPath)) {
+        $queryInsert = "INSERT INTO pesanan (id_pengguna, no_kamar, mulai_pemesanan, durasi, catatan)
+                        VALUES ('$id_user', '$id_kamar', '$tanggal_mulai', '$durasi', '$catatan')";
+        
+        if (mysqli_query($connection, $queryInsert)) {
+            $id_pemesanan = mysqli_insert_id($connection);
+            if ($id_pemesanan == 0) {
+                die("INSERT gagal! SQL: $queryInsert Error: " . mysqli_error($connection));
+            }
+
+            $queryUpdate = "UPDATE pengguna SET ktp = '$uploadPath' WHERE id = '$id_user'";
+            mysqli_query($connection, $queryUpdate);
+
+            header("Location: pembayaran.php?id_pemesanan=$id_pemesanan");
+            exit;
+        } else {
+            $result = ['status' => 'error', 'message' => mysqli_error($connection)];
+        }
+    } else {
+        $result = ['status' => 'error', 'message' => 'Upload file gagal.'];
+    }
+}
 ?>
-
 
 
 <!DOCTYPE html>
@@ -41,7 +101,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 
     <div class="mb-3">
-      <label for="durasi" class="form-label">Durasi (hari)</label>
+      <label for="durasi" class="form-label">Durasi (bulan)</label>
       <input type="number" id="durasi" name="durasi" class="form-control" min="1" required />
     </div>
 
@@ -56,24 +116,23 @@ if (!isset($_SESSION['user'])) {
     </div>
 
     <button type="submit" class="btn btn-primary">Submit Pre-Order</button>
+    <?php if (!empty($result)): ?>
+      <div class="mt-4">
+        <?php if ($result['status'] === 'success'): ?>
+          <div class="alert alert-success">
+            Pre-Order berhasil!<br>
+            ID Pemesanan: <?= htmlspecialchars($result['id_pemesanan']) ?><br>
+            File: <?= htmlspecialchars($result['file']) ?>
+          </div>
+        <?php else: ?>
+          <div class="alert alert-danger">
+            Error: <?= htmlspecialchars($result['message']) ?>
+          </div>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
   </form>
 
-  <?php if (!empty($result)): ?>
-    <div class="mt-4">
-      <?php if ($result['status'] === 'success'): ?>
-        <div class="alert alert-success">
-          Pre-Order berhasil dengan ID: <?= htmlspecialchars($result['id_pemesanan']) ?><br>
-          File uploaded: <?= htmlspecialchars($result['file']) ?>
-        </div>
-      <?php else: ?>
-        <div class="alert alert-danger">
-          Error: <?= htmlspecialchars($result['message']) ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
