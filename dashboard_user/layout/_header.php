@@ -5,18 +5,22 @@ if (!isset($_SESSION['login'])) {
     exit;
 }
 ?>
-<div class="navbar-bg bg-dark"></div>
-<nav class="navbar navbar-expand-lg main-navbar">
-  <ul class="navbar-nav navbar-right">
-    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-        <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1" style="color: white; width: 30px">
-        <div class="d-sm-none d-lg-inline-block">Hi, <?= $_SESSION['login']['nama_pengguna'] ?></div>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="dropdown ms-auto">
+      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="assets/img/avatar/avatar-1.png" alt="avatar" class="rounded-circle me-2" style="width: 30px;">
+        <span class="text-white fw-bold">Hi, <?= $_SESSION['login']['nama_pengguna'] ?></span>
       </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a href="../logout.php" class="dropdown-item has-icon text-danger">
-          <i class="fas fa-sign-out-alt"></i> Logout
-        </a>
-      </div>
-    </li>
-  </ul>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <a href="../form/auth/logout.php" class="dropdown-item text-danger">
+            <i class="bi bi-box-arrow-left me-2"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+

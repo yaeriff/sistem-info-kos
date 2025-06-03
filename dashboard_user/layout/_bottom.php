@@ -1,5 +1,5 @@
 </div>
-<footer class="main-footer bg-dark">
+<footer class="main-footer bg-dark h-10" >
   <div class="footer-right" style="text-align: center; color: white; justify-content: center">
     2025 Copyright &copy; <strong><span>UIN WS</span></strong>
   </div>
