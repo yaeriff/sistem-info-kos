@@ -54,9 +54,7 @@ if (session_status() == PHP_SESSION_NONE) {
     </a>
     <nav id="navmenu" class="navmenu">
       <ul>
-        <?php if (isset($_SESSION['login'])): ?>
-          <li><a href="riwayat.php">Riwayat Pemesanan</a></li>
-        <?php endif; ?>
+        
         <li><a href="#hero">Beranda<br /></a></li>
         <li><a href="#about">Tentang Kos</a></li>
         <li><a href="#portfolio">Daftar Kamar</a></li>
