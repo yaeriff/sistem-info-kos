@@ -27,6 +27,7 @@ $result = mysqli_stmt_get_result($stmt);
     <meta charset="UTF-8">
     <title>Riwayat Pemesanan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="riwyat.css">
 </head>
 <body>
 <div class="container py-5">

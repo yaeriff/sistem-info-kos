@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* Container utama */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831;
+}
+
+/* Padding di container */
+.container {
+  max-width: 1000px;
+  padding: 2.4rem;
+  background-color: #948979;
+  border-radius: 12px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.4),
+    0 32px 64px -18px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading */
+h2 {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Tombol kembali */
+.btn.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #495864;
+}
+
+/* Tabel */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table th, .table td {
+  padding: 12px 16px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table thead {
+  background-color: #f1f1f1;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Badge status */
+.badge {
+  padding: 0.4em 0.75em;
+  font-size: 0.85em;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Badge warna */
+.bg-success {
+  background-color: #198754;
+  color: #fff;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* Alert jika tidak ada data */
+.alert.alert-info {
+  background-color: #e9f7fe;
+  color: #055160;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #b6effb;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 45%;
+  }
+}
