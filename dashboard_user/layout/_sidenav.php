@@ -21,61 +21,22 @@
       <span class="nav-link disabled">Main Feature</span>
     </li>
 
-    <!-- Dropdown Dosen -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdownDosen" data-bs-toggle="dropdown" aria-expanded="false">
+    <li>
+      <a href="../" class="nav-link text-dark">
         <i class="fas fa-columns me-2"></i>Dosen
       </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownDosen">
-        <li><a class="dropdown-item" href="../dosen/index.php">List</a></li>
-        <li><a class="dropdown-item" href="../dosen/create.php">Tambah Data</a></li>
-      </ul>
+    </li>
+    <li>
+      <a href="../" class="nav-link text-dark">
+        <i class="fas fa-columns me-2"></i>Dosen
+      </a>
+    </li>
+    <li>
+      <a href="../" class="nav-link text-dark">
+        <i class="fas fa-columns me-2"></i>Dosen
+      </a>
     </li>
 
-    <!-- Dropdown Mahasiswa -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdownMahasiswa" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-columns me-2"></i>Mahasiswa
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMahasiswa">
-        <li><a class="dropdown-item" href="../mahasiswa/index.php">List</a></li>
-        <li><a class="dropdown-item" href="../mahasiswa/create.php">Tambah Data</a></li>
-      </ul>
-    </li>
-
-    <!-- Dropdown User -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-columns me-2"></i>User
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownUser">
-        <li><a class="dropdown-item" href="../user/index.php">List</a></li>
-        <li><a class="dropdown-item" href="../user/create.php">Tambah Data</a></li>
-      </ul>
-    </li>
-
-    
-    <!-- Dropdown Mata Kuliah -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdownMatkul" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-columns me-2"></i>Mata Kuliah
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMatkul">
-        <li><a class="dropdown-item" href="../matakuliah/index.php">List</a></li>
-        <li><a class="dropdown-item" href="../matakuliah/create.php">Tambah Data Nilai</a></li>
-      </ul>
-    </li>
-
-    <!-- Dropdown Nilai -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdownNilai" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-columns me-2"></i>Nilai
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownNilai">
-        <li><a class="dropdown-item" href="../nilai/index.php">List</a></li>
-        <li><a class="dropdown-item" href="../nilai/create.php">Tambah Nilai</a></li>
-      </ul>
-    </li>
   </ul>
 </div>
 
