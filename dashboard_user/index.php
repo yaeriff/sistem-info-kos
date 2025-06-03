@@ -1,10 +1,12 @@
 <?php
 session_start();
+require_once '../helper/connection.php';
 // Pastikan user sudah login
 if (!isset($_SESSION['login'])) {
   header('Location: ../forms/auth/login.php');
   exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +47,13 @@ if (!isset($_SESSION['login'])) {
     <hr class="text-white">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="dashboard.php?page=home" class="nav-link text-white">Home</a>
+        <a href="../index.php" class="nav-link text-white">Home</a>
       </li>
       <li>
-        <a href="dashboard.php?page=riwayat" class="nav-link text-white">Riwayat Pemesanan</a>
+        <a href="index.php?page=riwayat" class="nav-link text-white">Riwayat Pemesanan</a>
       </li>
       <li>
-        <a href="dashboard.php?page=profile" class="nav-link text-white">Profil</a>
+        <a href="index.php?page=profile" class="nav-link text-white">Profil</a>
       </li>
       <li>
         <a href="dashboard.php?page=pesan" class="nav-link text-white">Pesan Masuk</a>
@@ -65,7 +67,7 @@ if (!isset($_SESSION['login'])) {
       <div class="container-fluid">
         <span class="navbar-brand">Dashboard Pengguna</span>
         <div class="d-flex">
-          <span class="navbar-text me-3">Hi, <?php echo $_SESSION['nama_pengguna']; ?></span>
+          <span class="navbar-text me-3">Hi, <?php echo $_SESSION['login']['nama_pengguna']; ?></span>
           <a href="logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
         </div>
       </div>
@@ -78,61 +80,116 @@ if (!isset($_SESSION['login'])) {
 
       switch ($page) {
         case 'home':
-          echo "<h3>Selamat Datang, {$_SESSION['username']}!</h3>
-          <p>Silakan pilih kamar yang tersedia untuk dipesan.</p>
-
-          <h5 class='mt-4'>Daftar Kamar Tersedia</h5>
-          <div class='row'>
-            <div class='col-md-4'>
-              <div class='card mb-4'>
-                <div class='card-body'>
-                  <h5 class='card-title'>Kamar A1</h5>
-                  <p class='card-text'>Rp800.000 / bulan</p>
-                  <p class='card-text'><small class='text-muted'>AC, Wifi, KM Dalam</small></p>
-                  <a href='preorder.php?kamar_id=1' class='btn btn-primary btn-sm'>Pesan</a>
-                </div>
-              </div>
-            </div>
-            <div class='col-md-4'>
-              <div class='card mb-4'>
-                <div class='card-body'>
-                  <h5 class='card-title'>Kamar B2</h5>
-                  <p class='card-text'>Rp650.000 / bulan</p>
-                  <p class='card-text'><small class='text-muted'>Kipas, KM Luar</small></p>
-                  <a href='preorder.php?kamar_id=2' class='btn btn-primary btn-sm'>Pesan</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h5 class='mt-5'>Riwayat Pemesanan Terakhir</h5>
-          <table class='table table-bordered'>
-            <thead>
-              <tr>
-                <th>Kamar</th>
-                <th>Durasi</th>
-                <th>Tanggal Mulai</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Kamar A1</td>
-                <td>3 bulan</td>
-                <td>2025-06-10</td>
-                <td><span class='badge bg-success'>Aktif</span></td>
-              </tr>
-            </tbody>
-          </table>";
+          echo "<h3>Selamat Datang, {$_SESSION['login']['nama_pengguna']}!</h3>
+          <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+          ";
           break;
 
         case 'riwayat':
-          echo "<h3>Riwayat Pemesanan</h3><p>Daftar lengkap pemesanan Anda akan ditampilkan di sini.</p>";
-          break;
+            $id_user = $_SESSION['login']['id'];
+
+            $query = "SELECT p.*, k.nama_kamar, k.harga 
+                      FROM pesanan p
+                      JOIN kamar k ON p.no_kamar = k.id_kamar
+                      WHERE p.id_pengguna = ?
+                      ORDER BY p.id_pemesanan DESC";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, "i", $id_user);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            ?>
+
+            <div class="container py-5">
+              <h2>Riwayat Pemesanan Anda</h2>
+              <?php if (mysqli_num_rows($result) > 0): ?>
+                <table class="table table-bordered">
+                  <thead class="table-light">
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Kamar</th>
+                      <th>Mulai Pemesanan</th>
+                      <th>Durasi</th>
+                      <th>Total Harga</th>
+                      <th>Metode Pembayaran</th>
+                      <th>Status</th>
+                      <th>Catatan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php 
+                  $no = 1;
+                  while ($row = mysqli_fetch_assoc($result)): 
+                  ?>
+                    <tr>
+                      <td><?= $no++ ?></td>
+                      <td><?= htmlspecialchars($row['nama_kamar']) ?></td>
+                      <td><?= htmlspecialchars($row['mulai_pemesanan']) ?></td>
+                      <td><?= $row['durasi'] ?> bulan</td>
+                      <td>Rp <?= number_format($row['total_harga']) ?></td>
+                      <td><?= strtoupper($row['metode_pembayaran']) ?: '-' ?></td>
+                      <td>
+                        <?php if ($row['status_pembayaran'] == 'lunas'): ?>
+                          <span class="badge bg-success">Lunas</span>
+                        <?php else: ?>
+                          <span class="badge bg-warning text-dark">Belum Lunas</span>
+                        <?php endif; ?>
+                      </td>
+                      <td><?= nl2br(htmlspecialchars($row['catatan'])) ?></td>
+                    </tr>
+                  <?php endwhile; ?>
+                  </tbody>
+                </table>
+              <?php else: ?>
+                <div class="alert alert-info">Belum ada riwayat pemesanan.</div>
+              <?php endif; ?>
+            </div>
+
+            <?php
+            break;
+
 
         case 'profile':
-          echo "<h3>Profil Anda</h3><p>Informasi akun dan data pribadi Anda.</p>";
+          // Contoh: data dari session (sebaiknya dari database)
+          $nama = $_SESSION['login']['nama_pengguna'];
+          $email = $_SESSION['login']['email'];
+          $password = $_SESSION['login']['password'];
+          $telepon = $_SESSION['login']['telepon'];
+          $alamat = $_SESSION['login']['alamat'];
+          $ktp = $_SESSION['login']['ktp'];
+
+          echo "
+          <h3>Profil Anda</h3>
+          <form method='POST' action='update_profile.php'>
+            <div class='mb-3'>
+              <label for='nama' class='form-label'>Nama Lengkap</label>
+              <input type='text' class='form-control' id='nama' name='nama' value='$nama'>
+            </div>
+            <div class='mb-3'>
+              <label for='email' class='form-label'>Email</label>
+              <input type='email' class='form-control' id='email' name='email' value='$email'>
+            </div>
+            <div class='mb-3'>
+              <label for='password' class='form-label'>Password</label>
+              <input type='text' class='form-control' id='password' name='password' value='$password'>
+            </div>
+            <div class='mb-3'>
+              <label for='telepon' class='form-label'>No HP</label>
+              <input type='text' class='form-control' id='telepon' name='telepon' value='$telepon'>
+            </div>
+            <div class='mb-3'>
+            <label for='alamat' class='form-label'>Alamat</label>
+            <textarea class='form-control' id='alamat' name='alamat'>$alamat</textarea>
+            </div>
+            <div class='mb-3'>
+              <label for='ktp' class='form-label'>Foto KTP/KTM</label><br>  
+               <img src='../$ktp' alt='Foto KTP' width='200' class='img-thumbnail'>
+            </div>
+            <button type='submit' class='btn btn-primary'>Simpan Perubahan</button>
+            <a href='dashboard.php?page=change_password' class='btn btn-warning ms-2'>Ubah Password</a>
+          </form>
+          ";
           break;
+
 
         case 'pesan':
           echo "<h3>Pesan Masuk</h3><p>Notifikasi atau pesan dari pengelola kos akan muncul di sini.</p>";
