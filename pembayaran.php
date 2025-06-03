@@ -56,9 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['metode_pembayaran']))
     <meta charset="UTF-8">
     <title>Pembayaran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="riwyat.css">
 </head>
 <body>
 <div class="container py-5">
+    <a href="index.php" class="btn btn-danger mb-3">← Kembali ke Beranda</a>
     <h2>Detail Pembayaran</h2>
     <table class="table">
         <tr><th>Nama Kamar</th><td><?= htmlspecialchars($pemesanan['nama_kamar']) ?></td></tr>

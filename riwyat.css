@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-/* Container utama */
 body {
   margin: 0;
   height: 100vh;
@@ -10,7 +9,6 @@ body {
   background-color: #222831;
 }
 
-/* Padding di container */
 .container {
   max-width: 1000px;
   padding: 2.4rem;
@@ -20,13 +18,11 @@ body {
     0 32px 64px -18px rgba(0, 0, 0, 0.5);
 }
 
-/* Heading */
 h2 {
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
 
-/* Tombol kembali */
 .btn.btn-secondary {
   background-color: #6c757d;
   border: none;
@@ -63,7 +59,6 @@ h2 {
   background-color: #f9f9f9;
 }
 
-/* Badge status */
 .badge {
   padding: 0.4em 0.75em;
   font-size: 0.85em;
@@ -72,7 +67,6 @@ h2 {
   font-weight: 500;
 }
 
-/* Badge warna */
 .bg-success {
   background-color: #198754;
   color: #fff;
@@ -83,7 +77,6 @@ h2 {
   color: #000;
 }
 
-/* Alert jika tidak ada data */
 .alert.alert-info {
   background-color: #e9f7fe;
   color: #055160;
@@ -92,7 +85,6 @@ h2 {
   border: 1px solid #b6effb;
 }
 
-/* Responsive table */
 @media screen and (max-width: 768px) {
   .table thead {
     display: none;
@@ -118,3 +110,5 @@ h2 {
     flex-basis: 45%;
   }
 }
+
+

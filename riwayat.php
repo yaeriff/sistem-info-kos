@@ -32,7 +32,7 @@ $result = mysqli_stmt_get_result($stmt);
 <body>
 <div class="container py-5">
     <h2>Riwayat Pemesanan Anda</h2>
-    <a href="index.php" class="btn btn-secondary mb-3">← Kembali ke Beranda</a>
+    <a href="index.php" class="btn btn-danger mb-3">← Kembali ke Beranda</a>
     
     <?php if (mysqli_num_rows($result) > 0): ?>
         <table class="table table-bordered">
