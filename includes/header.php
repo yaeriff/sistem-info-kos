@@ -27,7 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+            <li><a class="dropdown-item" href="dashboard_user/index.php">Dashboard</a></li>
             <li><a class="dropdown-item" href="#">Pesan Masuk</a></li>
             <li><a class="dropdown-item" href="riwayat.php">Riwayat Pemesanan</a></li>
             <li>
