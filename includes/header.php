@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <li><a class="dropdown-item" href="#">Pesan Masuk</a></li>
             <li><a class="dropdown-item" href="riwayat.php">Riwayat Pemesanan</a></li>
             <li>
-              <a href="../forms/auth/logout.php" class="dropdown-item has-icon text-danger">
+              <a href="forms/auth/logout.php" class="dropdown-item has-icon text-danger">
                 <i class="bi bi-box-arrow-left"></i> Logout
               </a>
             </li>

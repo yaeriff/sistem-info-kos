@@ -68,7 +68,7 @@ if (!isset($_SESSION['login'])) {
         <span class="navbar-brand">Dashboard Pengguna</span>
         <div class="d-flex">
           <span class="navbar-text me-3">Hi, <?php echo $_SESSION['login']['nama_pengguna']; ?></span>
-          <a href="logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
+          <a href="../forms/auth/logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
         </div>
       </div>
     </nav>

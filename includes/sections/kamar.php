@@ -25,7 +25,7 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-<?php echo htmlspecialchars($kamar['tipe']); ?>">
           <div class="portfolio-content h-100">
             <a href="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" data-gallery="portfolio-gallery-app" class="glightbox">
-              <img src="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>">
+              <img src="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" class="img-" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>" width="100px">
             </a>
             <div class="portfolio-info">
               <h4><?php echo htmlspecialchars($kamar['nama_kamar']); ?></h4>
@@ -48,7 +48,7 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <!-- Tombol Lihat Selengkapnya -->
     <div class="text-center mt-4">
-      <a href="kamar.php" class="btn btn-outline-primary">Lihat Selengkapnya</a>
+      <a href="daftarKamar.php" class="btn btn-outline-primary">Lihat Selengkapnya</a>
     </div>
   </div>
 </section>
