@@ -56,7 +56,7 @@ if (!isset($_SESSION['login'])) {
         <a href="index.php?page=profile" class="nav-link text-white">Profil</a>
       </li>
       <li>
-        <a href="dashboard.php?page=pesan" class="nav-link text-white">Pesan Masuk</a>
+        <a href="index.php?page=pesan" class="nav-link text-white">Pesan Masuk</a>
       </li>
     </ul>
   </div>
@@ -192,8 +192,60 @@ if (!isset($_SESSION['login'])) {
 
 
         case 'pesan':
-          echo "<h3>Pesan Masuk</h3><p>Notifikasi atau pesan dari pengelola kos akan muncul di sini.</p>";
+          $id_user = $_SESSION['login']['id'];
+          $query = "SELECT * FROM pesan WHERE id_pengguna = ? ORDER BY tanggal DESC";
+          $stmt = mysqli_prepare($connection, $query);
+          mysqli_stmt_bind_param($stmt, "i", $id_user);
+          mysqli_stmt_execute($stmt);
+          $result = mysqli_stmt_get_result($stmt);
+
+          ?>
+          <div class="container py-4">
+            <h3>Pesan Masuk</h3>
+            <?php if (mysqli_num_rows($result) > 0): ?>
+              <div class="list-group">
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                  <div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><?= htmlspecialchars($row['judul']) ?></h5>
+                      <small><?= date('d M Y H:i', strtotime($row['tanggal'])) ?></small>
+                    </div>
+                    <p class="mb-1"><?= nl2br(htmlspecialchars($row['isi'])) ?></p>
+                    <small class="<?= $row['status'] === 'baru' ? 'text-danger' : 'text-muted' ?>">
+                      Status: <?= ucfirst($row['status']) ?>
+                    </small>
+                  </div>
+                <?php endwhile; ?>
+              </div>
+            <?php else: ?>
+              <div class="alert alert-info mt-3">Belum ada pesan masuk.</div>
+            <?php endif; ?>
+          </div>
+          <?php
           break;
+        
+      
+        case 'change_password':
+              echo "
+                <div class="container">
+                  <h3>Ubah Password</h3>
+                  <form method="POST" action="proses_change_password.php">
+                    <div class="mb-3">
+                      <label for="old_password" class="form-label">Password Lama</label>
+                      <input type="password" class="form-control" id="old_password" name="old_password" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="new_password" class="form-label">Password Baru</label>
+                      <input type="password" class="form-control" id="new_password" name="new_password" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="confirm_password" class="form-label">Konfirmasi Password Baru</label>
+                      <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan Password Baru</button>
+                  </form>
+                </div>"
+            break;
 
         default:
           echo "<h3>404</h3><p>Halaman tidak ditemukan.</p>";
