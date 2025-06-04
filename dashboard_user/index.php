@@ -224,28 +224,7 @@ if (!isset($_SESSION['login'])) {
           <?php
           break;
         
-      
-        case 'change_password':
-              echo "
-                <div class="container">
-                  <h3>Ubah Password</h3>
-                  <form method="POST" action="proses_change_password.php">
-                    <div class="mb-3">
-                      <label for="old_password" class="form-label">Password Lama</label>
-                      <input type="password" class="form-control" id="old_password" name="old_password" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="new_password" class="form-label">Password Baru</label>
-                      <input type="password" class="form-control" id="new_password" name="new_password" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="confirm_password" class="form-label">Konfirmasi Password Baru</label>
-                      <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan Password Baru</button>
-                  </form>
-                </div>"
-            break;
+    
 
         default:
           echo "<h3>404</h3><p>Halaman tidak ditemukan.</p>";
