@@ -149,45 +149,7 @@ if (!isset($_SESSION['login'])) {
 
 
         case 'profile':
-          // Contoh: data dari session (sebaiknya dari database)
-          $nama = $_SESSION['login']['nama_pengguna'];
-          $email = $_SESSION['login']['email'];
-          $password = $_SESSION['login']['password'];
-          $telepon = $_SESSION['login']['telepon'];
-          $alamat = $_SESSION['login']['alamat'];
-          $ktp = $_SESSION['login']['ktp'];
-
-          echo "
-          <h3>Profil Anda</h3>
-          <form method='POST' action='update_profile.php'>
-            <div class='mb-3'>
-              <label for='nama' class='form-label'>Nama Lengkap</label>
-              <input type='text' class='form-control' id='nama' name='nama' value='$nama'>
-            </div>
-            <div class='mb-3'>
-              <label for='email' class='form-label'>Email</label>
-              <input type='email' class='form-control' id='email' name='email' value='$email'>
-            </div>
-            <div class='mb-3'>
-              <label for='password' class='form-label'>Password</label>
-              <input type='text' class='form-control' id='password' name='password' value='$password'>
-            </div>
-            <div class='mb-3'>
-              <label for='telepon' class='form-label'>No HP</label>
-              <input type='text' class='form-control' id='telepon' name='telepon' value='$telepon'>
-            </div>
-            <div class='mb-3'>
-            <label for='alamat' class='form-label'>Alamat</label>
-            <textarea class='form-control' id='alamat' name='alamat'>$alamat</textarea>
-            </div>
-            <div class='mb-3'>
-              <label for='ktp' class='form-label'>Foto KTP/KTM</label><br>  
-               <img src='../$ktp' alt='Foto KTP' width='200' class='img-thumbnail'>
-            </div>
-            <button type='submit' class='btn btn-primary'>Simpan Perubahan</button>
-            <a href='dashboard.php?page=change_password' class='btn btn-warning ms-2'>Ubah Password</a>
-          </form>
-          ";
+          include 'pages/profile.php';
           break;
 
 
