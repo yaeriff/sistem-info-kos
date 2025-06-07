@@ -58,6 +58,10 @@ if (!isset($_SESSION['login'])) {
       <li>
         <a href="index.php?page=pesan" class="nav-link text-white">Pesan Masuk</a>
       </li>
+      <li>
+        <a href="index.php?page=pembayaran" class="nav-link text-white">Pembayaran</a>
+      </li>
+      
     </ul>
   </div>
 
