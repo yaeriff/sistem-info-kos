@@ -12,7 +12,7 @@ body {
 .container {
   max-width: 1000px;
   padding: 2.4rem;
-  background-color: #948979;
+  background-color: #a6cdc6;
   border-radius: 12px;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.4),
     0 32px 64px -18px rgba(0, 0, 0, 0.5);
@@ -44,7 +44,8 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   padding: 12px 16px;
   border: 1px solid #dee2e6;
   text-align: left;
@@ -110,5 +111,3 @@ h2 {
     flex-basis: 45%;
   }
 }
-
-
