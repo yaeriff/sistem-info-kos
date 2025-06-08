@@ -20,7 +20,7 @@ body {
 }
 
 .box {
-  background: #948979;
+  background: #dda853;
   display: flex;
   flex-direction: column;
   padding: 25px 25px;
@@ -166,4 +166,5 @@ main {
   margin-bottom: 10px;
   color: red;
 }
+
 

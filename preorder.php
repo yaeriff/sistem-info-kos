@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
 <meta charset="UTF-8" />
 <title>Pre-Order Kamar</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="ordering.css" rel="stylesheet" />
+<link rel="stylesheet" href="preordering.css">
 </head>
 <body>
   <div class="container py-5">
