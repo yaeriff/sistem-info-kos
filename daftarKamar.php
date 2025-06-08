@@ -31,7 +31,7 @@ foreach ($dataKamar as $kamar) {
    
 </head>
 <body>
-    <section id="portfolio" class="portfolio section">
+<section id="portfolio" class="portfolio section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Daftar Kamar</h2>
     <p>Berikut adalah daftar kamar kos yang tersedia berdasarkan tipe:</p>
@@ -46,7 +46,7 @@ foreach ($dataKamar as $kamar) {
             <div class="col-lg-4 col-md-6 portfolio-item">
               <div class="portfolio-content h-100">
                 <a href="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" data-gallery="portfolio-gallery-app" class="glightbox">
-                  <img src="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>">
+                  <img src="assets/img/kamar/<?php echo htmlspecialchars($kamar['foto']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>">
                 </a>
                 <div class="portfolio-info">
                   <h4><?php echo htmlspecialchars($kamar['nama_kamar']); ?></h4>
