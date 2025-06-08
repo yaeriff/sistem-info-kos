@@ -12,7 +12,6 @@ if (!$result) {
 
 $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
-
 <section id="portfolio" class="portfolio section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Daftar Kamar</h2>
@@ -25,7 +24,7 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-<?php echo htmlspecialchars($kamar['tipe']); ?>">
           <div class="portfolio-content h-100">
             <a href="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" data-gallery="portfolio-gallery-app" class="glightbox">
-              <img src="assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" class="img-" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>" width="100%">
+              <img src="assets/img/kamar/<?php echo htmlspecialchars($kamar['foto']); ?>" class="img-" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>" width="300">
             </a>
             <div class="portfolio-info">
               <h4><?php echo htmlspecialchars($kamar['nama_kamar']); ?></h4>
@@ -35,7 +34,7 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
               <form method="POST" action="<?= isset($_SESSION['login']) ? 'preorder.php' : 'forms/auth/login.php'; ?>">
                 <input type="hidden" name="id_kamar" value="<?= htmlspecialchars($kamar['id_kamar']); ?>">
                 <br>
-                <button type="submit" class="btn btn-primary"
+                <button type="submit" class="btn btn-primary" style="background-color: #16404D; border-color: #16404D;"
                   <?= ($kamar['status'] === 'terisi') ? 'disabled' : ''; ?>>
                   <?= ($kamar['status'] === 'terisi') ? 'Terisi' : 'Pre Order'; ?>
                 </button>
@@ -48,7 +47,7 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <!-- Tombol Lihat Selengkapnya -->
     <div class="text-center mt-4">
-      <a href="daftarKamar.php" class="btn btn-outline-primary">Lihat Selengkapnya</a>
+      <a href="daftarKamar.php" class="btn btn-outline" style="color: #16404D; border-color: #16404D;">Lihat Selengkapnya</a>
     </div>
   </div>
 </section>

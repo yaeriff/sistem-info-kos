@@ -31,7 +31,7 @@ if (!isset($_SESSION['login'])) {
       text-decoration: none;
     }
     .sidebar .nav-link:hover {
-      background-color: #495057;
+      background-color: #A6CDC6;
     }
     .content {
       flex-grow: 1;
@@ -42,8 +42,8 @@ if (!isset($_SESSION['login'])) {
 <body>
 
   <!-- Sidebar -->
-  <div class="sidebar d-flex flex-column p-3">
-    <h4 class="text-white">Kos Online</h4>
+  <div class="sidebar d-flex flex-column p-3" style="background-color: #16404D;">
+    <h4 style="color: #DDA853;">Kos Bu Anna</h4>
     <hr class="text-white">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
@@ -89,9 +89,8 @@ if (!isset($_SESSION['login'])) {
 
       switch ($page) {
         case 'home':
-          echo "<h3>Selamat Datang, {$_SESSION['login']['nama_pengguna']}!</h3>
-          <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-          ";
+          echo "<h3>Selamat Datang, {$_SESSION['login']['nama_pengguna']}!</h3>";
+              require_once 'pages/home.php';
           break;
 
         case 'riwayat':
@@ -182,10 +181,15 @@ if (!isset($_SESSION['login'])) {
                       <small><?= date('d M Y H:i', strtotime($row['tanggal'])) ?></small>
                     </div>
                     <p class="mb-1"><?= nl2br(htmlspecialchars($row['isi'])) ?></p>
-                    <small class="<?= $row['status'] === 'baru' ? 'text-danger' : 'text-muted' ?>">
+                    <div class="d-flex w-100 justify-content-between">
+                      <small class="<?= $row['status'] === 'baru' ? 'text-danger' : 'text-muted' ?>">
                       Status: <?= ucfirst($row['status']) ?>
-                    </small>
-                    <a href="process/tandai_dibaca.php?id=<?= $row['id_pesan'] ?>" class="btn btn-sm btn-outline-primary mt-2">Tandai Dibaca</a>
+                      </small>
+                      <div class="d-flex">
+                        <a href="process/tandai_dibaca.php?id=<?= $row['id_pesan'] ?>" class="btn btn-sm btn-outline-primary">Tandai Dibaca</a>
+                        <a href="process/hapus_pesan.php?id=<?= $row['id_pesan'] ?>" class="btn btn-sm btn-outline-danger">Hapus</a>
+                      </div>
+                    </div>
                   </div>
                 <?php endwhile; ?>
               </div>

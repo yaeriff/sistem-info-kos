@@ -1,23 +1,4 @@
 /**
-* Template Name: Impact
-* Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
-:root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Montserrat", sans-serif;
-  --nav-font: "Poppins", sans-serif;
-}
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
@@ -25,8 +6,8 @@
   --default-color: #16404d; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #dda853; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #16404d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #f2f2f2; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #f2f2f2; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --surface-color: #fbf5dd; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #fbf5dd; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -905,7 +886,7 @@ section,
 }
 
 .hero h2 .accent {
-  color: #dfd0b8;
+  color: #dda853;
 }
 
 .hero p {
@@ -916,7 +897,7 @@ section,
 
 .hero .btn-get-started {
   color: var(--default-color);
-  background: #dfd0b8;
+  background: #fbf5dd;
   font-family: var(--heading-font);
   font-weight: 600;
   font-size: 14px;
@@ -932,7 +913,7 @@ section,
 .hero .btn-get-started:hover {
   border-color: color-mix(in srgb, #dfd0b8, transparent 40%);
   color: var(--contrast-color);
-  background: #948979;
+  background: #dda853;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
