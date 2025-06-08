@@ -17,8 +17,12 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <h2>Daftar Kamar</h2>
     <p>Berikut adalah daftar kamar kos yang tersedia:</p>
   </div>
-
   <div class="container">
+    <div class="d-flex align-items-center mb-3">
+      <h6 class="fw-bold mb-0">Daftar Kamar Kos</h6>
+      <div class="flex-grow-1 border-top border-2 mx-3" style="border-color: #16404D !important;"></div>
+      <a href="daftarKamar.php" class="btn btn-sm fw-semibold shadow-sm rounded-pill" style="background-color: #16404D; color: #fff;">Lihat Selengkapnya</a>
+    </div>
     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
       <?php foreach ($dataKamar as $kamar): ?>
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-<?php echo htmlspecialchars($kamar['tipe']); ?>">
@@ -46,8 +50,6 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </div>
 
     <!-- Tombol Lihat Selengkapnya -->
-    <div class="text-center mt-4">
-      <a href="daftarKamar.php" class="btn btn-outline" style="color: #16404D; border-color: #16404D;">Lihat Selengkapnya</a>
-    </div>
+    
   </div>
 </section>
