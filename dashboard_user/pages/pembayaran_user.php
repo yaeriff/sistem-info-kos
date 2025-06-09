@@ -37,10 +37,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
 
     echo "</p>";
-    echo "<p><strong>Status Pembayaran:</strong> {$row['status_pembayaran']}</p>";
+    echo "<p><strong>Status pemesanan:</strong> {$row['status_pemesanan']}</p>";
     echo "</div>";
 
-    // Tampilkan tombol pembayaran ulang jika sudah lewat
+    // Tampilkan tombol pemesanan ulang jika sudah lewat
     if ($sekarang > $akhir_pesan) {
         echo "<a href='pages/bayar_ulang.php?id={$row['id_pemesanan']}' class='btn btn-danger'>Bayar Ulang</a>";
     }

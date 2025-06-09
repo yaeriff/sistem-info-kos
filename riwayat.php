@@ -12,7 +12,7 @@ $id_user = $_SESSION['login']['id'];
 // Ambil semua pesanan pengguna
 $query = "SELECT p.*, k.nama_kamar, k.harga 
           FROM pesanan p
-          JOIN kamar k ON p.no_kamar = k.id_kamar
+          JOIN kamar k ON p.id_kamar = k.id_kamar
           WHERE p.id_pengguna = ?
           ORDER BY p.id_pemesanan DESC";
 $stmt = mysqli_prepare($connection, $query);
@@ -61,7 +61,7 @@ $result = mysqli_stmt_get_result($stmt);
                     <td>Rp <?= number_format($row['total_harga']) ?></td>
                     <td><?= strtoupper($row['metode_pembayaran']) ?: '-' ?></td>
                     <td>
-                        <?php if ($row['status_pembayaran'] == 'lunas'): ?>
+                        <?php if ($row['status_pemesanan'] == 'lunas'): ?>
                             <span class="badge bg-success">Lunas</span>
                         <?php else: ?>
                             <span class="badge bg-warning text-dark">Belum Lunas</span>

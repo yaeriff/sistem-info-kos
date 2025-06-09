@@ -58,7 +58,7 @@ if (!isset($_SESSION['login'])) {
       <li>
         <a href="index.php?page=pesan" class="nav-link text-white">Pesan Masuk <span class="badge bg-danger"><?php
           $id = $_SESSION['login']['id'];
-          $notif = mysqli_query($connection, "SELECT COUNT(*) as total FROM pesan WHERE id_pengguna = $id AND status = 'baru'");
+          $notif = mysqli_query($connection, "SELECT COUNT(*) as total FROM pesanan WHERE id_pengguna = $id AND status_pemesanan = 'baru'");
           $jml = mysqli_fetch_assoc($notif)['total'];
           echo $jml > 0 ? $jml : '';
           ?></span></a>
@@ -98,7 +98,7 @@ if (!isset($_SESSION['login'])) {
 
             $query = "SELECT p.*, k.nama_kamar, k.harga 
                       FROM pesanan p
-                      JOIN kamar k ON p.no_kamar = k.id_kamar
+                      JOIN kamar k ON p.id_kamar = k.id_kamar
                       WHERE p.id_pengguna = ?
                       ORDER BY p.id_pemesanan DESC";
             $stmt = mysqli_prepare($connection, $query);

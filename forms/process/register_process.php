@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama = trim($_POST['nama']);
     $email = trim($_POST['email']);
     $telepon = trim($_POST['telepon']);
+    $alamat = trim($_POST['alamat']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Enkripsi password
 
     // Validasi: Cek apakah email sudah digunakan
@@ -20,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Simpan ke database
-    $insert = $connection->prepare("INSERT INTO pengguna (nama_pengguna, email, telepon, password) VALUES (?, ?, ?, ?)");
-    $insert->bind_param("ssss", $nama, $email, $telepon, $password);
+    $insert = $connection->prepare("INSERT INTO pengguna (tanggal_pembuatan, nama_pengguna, email, nomor_telepon, password, alamat) VALUES (now(), ?, ?, ?, ?, ?)");
+    $insert->bind_param("sssss", $nama, $email, $telepon, $password, $alamat);
 
     if ($insert->execute()) {
         echo "<script>alert('Registrasi berhasil! Silakan login.');

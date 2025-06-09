@@ -24,11 +24,7 @@
                 />
                 <h4>Bu Anna</h4>
                 <span>Pemilik Kos</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                </div>
+                
               </div>
             </div>
             <!-- End Team Member -->

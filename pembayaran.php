@@ -19,7 +19,7 @@ $id_pemesanan = $_GET['id_pemesanan'];
 // Ambil data pesanan dan harga kamar
 $query = "SELECT p.*, k.nama_kamar, k.harga 
           FROM pesanan p
-          JOIN kamar k ON p.no_kamar = k.id_kamar
+          JOIN kamar k ON p.id_kamar = k.id_kamar
           WHERE p.id_pemesanan = ? AND p.id_pengguna = ?";
 $stmt = mysqli_prepare($connection, $query);
 mysqli_stmt_bind_param($stmt, "ii", $id_pemesanan, $id_user);
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['metode_pembayaran']))
     $metode = $_POST['metode_pembayaran'];
     $status = 'belum lunas'; // default
 
-    $update = "UPDATE pesanan SET metode_pembayaran = ?, status_pembayaran = ?, total_harga = ? WHERE id_pemesanan = ?";
+    $update = "UPDATE pesanan SET metode_pembayaran = ?, status_pemesanan = ?, total_harga = ? WHERE id_pemesanan = ?";
     $stmt = mysqli_prepare($connection, $update);
     mysqli_stmt_bind_param($stmt, "ssii", $metode, $status, $total_harga, $id_pemesanan);
     if (mysqli_stmt_execute($stmt)) {
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['metode_pembayaran']))
     <meta charset="UTF-8">
     <title>Pembayaran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="riwyat.css">
+    <link rel="stylesheet" href="riwayat.css">
 </head>
 <body>
 <div class="container py-5">
@@ -84,8 +84,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['metode_pembayaran']))
                 <option value="qris">QRIS</option>
             </select>
         </div>
+        <div id="info-pembayaran" class="alert alert-info d-none"></div>
         <button type="submit" class="btn btn-success">Lanjutkan Pembayaran</button>
     </form>
 </div>
+<script>
+  const metodeSelect = document.getElementById('metode_pembayaran');
+  const infoPembayaran = document.getElementById('info-pembayaran');
+
+  metodeSelect.addEventListener('change', function () {
+    const metode = this.value;
+    infoPembayaran.classList.remove('d-none');
+
+    if (metode === 'bri') {
+      infoPembayaran.innerHTML = `
+        <strong>Transfer ke Rekening BRI:</strong><br>
+        No Rekening: <span class="text-primary">1234 5678 9012 3456</span><br>
+        Atas Nama: <strong>Kos Amanah</strong>
+      `;
+    } else if (metode === 'dana') {
+      infoPembayaran.innerHTML = `
+        <strong>Transfer ke DANA:</strong><br>
+        No DANA: <span class="text-primary">0812 3456 7890</span><br>
+        Atas Nama: <strong>Kos Amanah</strong>
+      `;
+    } else if (metode === 'qris') {
+      infoPembayaran.innerHTML = `
+        <strong>Scan Barcode QRIS:</strong><br>
+        <img src="../assets/img/qris-barcode.png" alt="QRIS" class="img-fluid mt-2" style="max-width: 200px;">
+      `;
+    } else {
+      infoPembayaran.classList.add('d-none');
+    }
+  });
+</script>
 </body>
 </html>

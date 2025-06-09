@@ -16,7 +16,11 @@ if (isset($_POST['submit'])) {
 
   if ($row && password_verify($password, $row['password'])) {
     $_SESSION['login'] = $row;
-    header('Location: ../../index.php');
+     if ($row['role'] == 'Admin') {
+      header('Location: ../../dashboard_admin/dashboard/index.php');
+    } elseif ($row['role'] == 'User') {
+      header('Location: ../../index.php');
+    } 
     exit;
   } else {
     $error = true;

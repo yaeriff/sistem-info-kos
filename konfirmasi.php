@@ -17,7 +17,7 @@ $id_pemesanan = $_GET['id_pemesanan'];
 
 $query = "SELECT p.*, k.nama_kamar 
           FROM pesanan p
-          JOIN kamar k ON p.no_kamar = k.id_kamar
+          JOIN kamar k ON p.id_kamar = k.id_kamar
           WHERE p.id_pemesanan = ? AND p.id_pengguna = ?";
 $stmt = mysqli_prepare($connection, $query);
 mysqli_stmt_bind_param($stmt, "ii", $id_pemesanan, $id_user);
@@ -30,24 +30,43 @@ if (!$pemesanan) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['konfirmasi'])) {
-    $uploadDir = 'data/bukti/';
-    $fileName = time() . '_' . basename($_FILES['bukti']['name']);
-    $uploadPath = $uploadDir . $fileName;
 
-    $allowed = ['image/jpeg', 'image/jpg', 'image/png'];
-    if (!in_array($_FILES['bukti']['type'], $allowed)) {
-        echo "<div class='alert alert-danger'>File tidak valid.</div>";
-    } elseif (move_uploaded_file($_FILES['bukti']['tmp_name'], $uploadPath)) {
-        // Simpan ke database
-        $query = "UPDATE pesanan SET status_pembayaran='lunas' WHERE id_pemesanan=?";
-        $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "i", $id_pemesanan);
-        mysqli_stmt_execute($stmt);
+    // Ambil ID pemesanan dari form
+    $id_pemesanan = $_POST['id_pemesanan'];
 
-        echo "<script>alert('Pembayaran dikonfirmasi!'); window.location='riwayat.php';</script>";
-        exit;
+    // Pastikan file dikirim dan tidak ada error
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] === 0) {
+
+        $allowed = ['image/jpeg', 'image/jpg', 'image/png'];
+
+        if (!in_array($_FILES['foto']['type'], $allowed)) {
+            echo "<div class='alert alert-danger'>File tidak valid. Harus JPEG/JPG/PNG.</div>";
+        } else {
+            // Ambil ekstensi file
+            $ekstensi = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+
+            // Nama file yang akan disimpan
+            $fileName = 'Bukti_ID' . $id_pemesanan . '.' . $ekstensi;
+
+            // Path upload
+            $uploadPath = "dashboard_admin/assets/img/bukti/" . $fileName;
+
+            // Upload file
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $uploadPath)) {
+                // Update status di database
+                $query = "UPDATE pesanan SET status_pemesanan='lunas', bukti_pembayaran=? WHERE id_pemesanan=?";
+                $stmt = mysqli_prepare($connection, $query);
+                mysqli_stmt_bind_param($stmt, "si", $fileName, $id_pemesanan);
+                mysqli_stmt_execute($stmt);
+
+                echo "<script>alert('Pembayaran dikonfirmasi!'); window.location='riwayat.php';</script>";
+                exit;
+            } else {
+                echo "<div class='alert alert-danger'>Upload gagal. Cek folder tujuan.</div>";
+            }
+        }
     } else {
-        echo "<div class='alert alert-danger'>Upload gagal.</div>";
+        echo "<div class='alert alert-warning'>Tidak ada file yang diunggah atau terjadi kesalahan.</div>";
     }
 }
 
@@ -58,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['konfirmasi'])) {
 <head>
     <title>Konfirmasi Pembayaran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="riwayat.css">k
 </head>
 <body>
 <div class="container py-5">
@@ -66,13 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['konfirmasi'])) {
     <p><strong>Nama Kamar:</strong> <?= htmlspecialchars($pemesanan['nama_kamar']) ?></p>
     <p><strong>Metode Pembayaran:</strong> <?= strtoupper($pemesanan['metode_pembayaran']) ?></p>
     <p><strong>Total:</strong> Rp <?= number_format($pemesanan['total_harga']) ?></p>
-    <p><strong>Status:</strong> <?= $pemesanan['status_pembayaran'] ?></p>
+    <p><strong>Status:</strong> <?= $pemesanan['status_pemesanan'] ?></p>
 
-    <?php if ($pemesanan['status_pembayaran'] == 'belum lunas'): ?>
+    <?php if ($pemesanan['status_pemesanan'] == 'belum lunas'): ?>
         <form method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="bukti" class="form-label">Upload Bukti Pembayaran</label>
-                <input type="file" name="bukti" id="bukti" class="form-control" required>
+                <input type="file" name="foto" id="bukti" class="form-control" required>
             </div>
             <button type="submit" name="konfirmasi" class="btn btn-primary">Konfirmasi Pembayaran</button>
         </form>

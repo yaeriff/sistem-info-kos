@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
     $result = ['status' => 'error', 'message' => 'Tipe file tidak diizinkan.'];
     
   } elseif (move_uploaded_file($_FILES['file']['tmp_name'], $uploadPath)) {
-        $queryInsert = "INSERT INTO pesanan (id_pengguna, no_kamar, mulai_pemesanan, durasi, catatan)
+        $queryInsert = "INSERT INTO pesanan (id_pengguna, id_kamar, mulai_pemesanan, durasi, catatan)
                         VALUES ('$id_user', '$id_kamar', '$tanggal_mulai', '$durasi', '$catatan')";
         
         if (mysqli_query($connection, $queryInsert)) {

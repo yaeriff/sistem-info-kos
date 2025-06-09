@@ -23,9 +23,6 @@
                 <p>
                   Kami menjamin bahwa kamar yang kami sediakan sangatlah nyaman. Jika penyewa belum merasa nyaman, maka kami akan segera meningkatkan pelayanan kamar kami. <i class="bi bi-emoji-smile"></i>
                 </p>
-                <a href="service-details.html" class="readmore stretched-link"
-                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
-                ></a>
               </div>
             </div>
             <!-- End Service Item -->
@@ -43,9 +40,6 @@
                 <p>
                   Jika ada fasilitas yang terlihat kurang layak atau rusak, maka kami akan segera mengantinya dengan yang baru.
                 </p>
-                <a href="service-details.html" class="readmore stretched-link"
-                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
-                ></a>
               </div>
             </div>
             <!-- End Service Item -->
@@ -63,9 +57,6 @@
                 <p>
                   Kami menawarkan Wi-Fi gratis yang tentunya cukup kencang dan stabil. Sehingga penyewa tidak perlu khawatir dengan jaringan Wi-Fi yang buruk.
                 </p>
-                <a href="service-details.html" class="readmore stretched-link"
-                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
-                ></a>
               </div>
             </div>
             <!-- End Service Item -->
@@ -83,9 +74,6 @@
                 <p>
                   Kami menyediakan pilihan kamar yang memiliki fasilitas lengkap namun dengan harga yang ramah dikantong.
                 </p>
-                <a href="service-details.html" class="readmore stretched-link"
-                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
-                ></a>
               </div>
             </div>
             <!-- End Service Item -->
@@ -103,9 +91,6 @@
                 <p>
                   Setiap penyewa akan mendapatkan satu akun untuk mengecek informasi seputar kos hingga akses untuk fitur-fitur khusus pada laman resmi kami.
                 </p>
-                <a href="service-details.html" class="readmore stretched-link"
-                  >Baca Selengkapnya <i class="bi bi-arrow-right"></i
-                ></a>
               </div>
             </div>
             <!-- End Service Item -->

@@ -30,6 +30,11 @@
           </div>
 
           <div class="field input">
+            <label for="alamat">Alamat</label>
+            <input type="text" name="alamat" id="alamat" autocomplete="off" required>
+          </div>
+
+          <div class="field input">
             <label for="password">Buat Password</label>
             <input type="password" name="password" id="password" autocomplete="off" required>
           </div>

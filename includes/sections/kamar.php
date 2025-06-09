@@ -28,7 +28,7 @@ $dataKamar = mysqli_fetch_all($result, MYSQLI_ASSOC);
       <div class="col-lg-4 col-md-6">
         <div class="card shadow-sm h-100 border-0" style="background-color: #FBF5DD !important;">
           <div class="position-relative">
-            <img src="assets/img/kamar/<?php echo htmlspecialchars($kamar['foto']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>">
+            <img src="dashboard_admin/assets/img/fasilitas/<?php echo htmlspecialchars($kamar['foto']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($kamar['nama_kamar']); ?>">
             <span class="position-absolute top-0 start-0 bg-<?= $kamar['status'] === 'terisi' ? 'danger' : 'success'; ?> text-white px-3 py-1 rounded-end">
               <?= $kamar['status'] === 'terisi' ? 'Tidak Tersedia' : 'Tersedia'; ?>
             </span>
