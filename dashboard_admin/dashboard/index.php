@@ -11,6 +11,7 @@ $total_kamar = mysqli_fetch_array($kamar)[0];
 $total_user = mysqli_fetch_array($user)[0];
 ?>
 
+
 <section class="section">
   <div class="section-header" style="background-color: #D6C0B3; border: none;">
     <h1 style="color: #ffffff;">Beranda</h1>
