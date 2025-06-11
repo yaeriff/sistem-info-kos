@@ -163,7 +163,7 @@ if (!isset($_SESSION['login'])) {
 
         case 'pesan':
           $id_user = $_SESSION['login']['id'];
-          $query = "SELECT * FROM pesan WHERE id_pengguna = ? ORDER BY tanggal DESC";
+          $query = "SELECT * FROM pesan_masuk WHERE id_pengguna = ? ORDER BY tanggal DESC";
           $stmt = mysqli_prepare($connection, $query);
           mysqli_stmt_bind_param($stmt, "i", $id_user);
           mysqli_stmt_execute($stmt);

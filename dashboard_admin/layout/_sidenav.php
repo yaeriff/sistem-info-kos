@@ -33,6 +33,13 @@
           <li><a class="nav-link" href="../user/create.php">Tambah Data</a></li>
         </ul>
       </li>           
+      <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Pesan Masuk</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="../pesan_masuk/index.php">Daftar Pesan Masuk</a></li>
+          <li><a class="nav-link" href="../pesan_masuk/create.php">Kirim Pesan/a></li>
+        </ul>
+      </li>           
     </ul>
   </aside>
 </div>
