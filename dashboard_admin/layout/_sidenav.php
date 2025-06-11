@@ -1,4 +1,4 @@
-<div class="main-sidebar sidebar-style-2" style="background-color: #222831;">
+<div class="main-sidebar sidebar-style-2" style="background-color: #16404d;">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
       <a href="index.php">

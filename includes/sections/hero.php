@@ -16,12 +16,7 @@
         </p>
         <div class="d-flex">
           <a href="#portfolio" class="btn-get-started">Pesan Sekarang</a>
-          <a
-            href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-            target="_blank"
-            class="glightbox btn-watch-video d-flex align-items-center"
-            ><i class="bi bi-play-circle"></i><span>Tonton Video</span></a
-          >
+          
         </div>
       </div>
       <div class="col-lg-5 order-1 order-lg-2">

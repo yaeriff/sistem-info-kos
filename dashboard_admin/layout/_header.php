@@ -1,4 +1,4 @@
-<div class="navbar-bg" style="background-color: #948979;"></div>
+<div class="navbar-bg" style="background-color: #dda853;"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
   <form class="form-inline mr-auto">
     <ul class="navbar-nav mr-3">
