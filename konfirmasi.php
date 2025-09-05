@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['konfirmasi'])) {
             // Upload file
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $uploadPath)) {
                 // Update status di database
-                $query = "UPDATE pesanan SET status_pemesanan='lunas', bukti_pembayaran=? WHERE id_pemesanan=?";
+                $query = "UPDATE pesanan SET status_pemesanan='lunas', bukti_transaksi=? WHERE id_pemesanan=?";
                 $stmt = mysqli_prepare($connection, $query);
                 mysqli_stmt_bind_param($stmt, "si", $fileName, $id_pemesanan);
                 mysqli_stmt_execute($stmt);

@@ -136,7 +136,7 @@ if (!isset($_SESSION['login'])) {
                       <td>Rp <?= number_format($row['total_harga']) ?></td>
                       <td><?= strtoupper($row['metode_pembayaran']) ?: '-' ?></td>
                       <td>
-                        <?php if ($row['status_pembayaran'] == 'lunas'): ?>
+                        <?php if ($row['status_pemesanan'] == 'lunas'): ?>
                           <span class="badge bg-success">Lunas</span>
                         <?php else: ?>
                           <span class="badge bg-warning text-dark">Belum Lunas</span>
