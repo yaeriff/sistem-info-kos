@@ -56,12 +56,17 @@ if (!isset($_SESSION['login'])) {
         <a href="index.php?page=profile" class="nav-link text-white">Profil</a>
       </li>
       <li>
-        <a href="index.php?page=pesan" class="nav-link text-white">Pesan Masuk</a>
+        <a href="index.php?page=pesan" class="nav-link text-white">Pesan Masuk <span class="badge bg-danger"><?php
+          $id = $_SESSION['login']['id'];
+          $notif = mysqli_query($connection, "SELECT COUNT(*) as total FROM pesan WHERE id_pengguna = $id AND status = 'baru'");
+          $jml = mysqli_fetch_assoc($notif)['total'];
+          echo $jml > 0 ? $jml : '';
+          ?></span></a>
       </li>
       <li>
         <a href="index.php?page=pembayaran" class="nav-link text-white">Pembayaran</a>
       </li>
-      
+
     </ul>
   </div>
 
@@ -180,6 +185,7 @@ if (!isset($_SESSION['login'])) {
                     <small class="<?= $row['status'] === 'baru' ? 'text-danger' : 'text-muted' ?>">
                       Status: <?= ucfirst($row['status']) ?>
                     </small>
+                    <a href="process/tandai_dibaca.php?id=<?= $row['id_pesan'] ?>" class="btn btn-sm btn-outline-primary mt-2">Tandai Dibaca</a>
                   </div>
                 <?php endwhile; ?>
               </div>
@@ -188,6 +194,9 @@ if (!isset($_SESSION['login'])) {
             <?php endif; ?>
           </div>
           <?php
+          break;
+          case 'pembayaran':
+            include 'pages/pembayaran_user.php';
           break;
         
     
